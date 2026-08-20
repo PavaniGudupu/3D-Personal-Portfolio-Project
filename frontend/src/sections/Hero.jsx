@@ -1,24 +1,20 @@
 import Scene from "../components/Scene";
 import Environment from "../components/Environment";
+import Navbar from "../components/Navbar";
 
 import "../styles/Hero.css";
 
 const Hero = () => {
-
   return (
     <section className="hero">
 
-      {/* =========================
-          FULL SCREEN ENVIRONMENT
-      ========================= */}
-
+      {/* FULL SCREEN BACKGROUND */}
       <Environment />
 
+      {/* NAVBAR */}
+      <Navbar />
 
-      {/* =========================
-          CONTENT
-      ========================= */}
-
+      {/* HERO CONTENT */}
       <div className="hero-content">
 
         <p className="hero-small-text">
@@ -50,11 +46,7 @@ const Hero = () => {
 
       </div>
 
-
-      {/* =========================
-          3D ISLAND
-      ========================= */}
-
+      {/* 3D ISLAND */}
       <div className="hero-3d">
         <Scene />
       </div>

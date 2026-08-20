@@ -88,8 +88,8 @@ const ResponsiveIsland = () => {
 
   // 🔒 LOCKED RESPONSIVE SCALE
   const scale = Math.min(
-    viewport.width * 0.06,
-    viewport.height * 0.06
+    viewport.width * 0.055,  // 3D image - size
+    viewport.height * 0.055
   );
 
   const islandRef = useRef();
@@ -169,7 +169,14 @@ useFrame((state) => {
 
     <Center>
 
-      <group ref={islandRef}>
+{/*   ################  3D image - rotation
+  <group
+    ref={islandRef}
+    rotation={[0, -0.4, 0]}
+  > 
+*/}
+
+      <group ref={islandRef} rotation={[0.38, -1.95, 0]}> 
 
         <FloatingIsland
           scale={scale}

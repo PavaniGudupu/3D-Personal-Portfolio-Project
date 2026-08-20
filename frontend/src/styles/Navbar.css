@@ -1,0 +1,278 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 80px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 8%;
+
+  box-sizing: border-box;
+
+  z-index: 100;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 38px;
+}
+
+
+.nav-link {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  transition: 0.3s;
+}
+
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+
+/* ACTIVE UNDERLINE */
+
+.active-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -12px;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.navbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+  width: 64px;
+
+  height: 34px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 3px 5px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+}
+
+
+.sun-icon {
+  font-size: 16px;
+}
+
+
+.toggle-circle {
+  width: 26px;
+
+  height: 26px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 13px;
+
+  background: rgba(0, 80, 150, 0.8);
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-button {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+
+  .menu-button {
+    display: block;
+
+    order: -1;
+  }
+
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+
+  .nav-links {
+    position: absolute;
+
+    top: 70px;
+
+    left: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding: 30px 0;
+
+    background:
+      rgba(5, 25, 50, 0.95);
+
+    backdrop-filter: blur(15px);
+
+    transform: translateY(-150%);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+  }
+
+
+  .nav-links.active {
+    transform: translateY(0);
+
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+
+  .active-link::after {
+    bottom: -7px;
+  }
+
+}
