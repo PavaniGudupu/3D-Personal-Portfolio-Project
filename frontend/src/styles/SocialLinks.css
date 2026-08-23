@@ -1,0 +1,106 @@
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.social-links {
+  position: absolute;
+
+  left: 4%;
+
+  top: 50%;
+
+  transform: translateY(-35%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  z-index: 5;
+}
+
+
+/* =========================
+   ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+.social-icons a {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 22px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+
+  color: #60a5fa;
+}
+
+
+/* =========================
+   VERTICAL LINE
+   RIGHT SIDE OF ICONS
+========================= */
+
+.social-line {
+  width: 1px;
+
+  height: 230px;
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .social-links {
+    left: 2%;
+  }
+
+  .social-line {
+    height: 190px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .social-links {
+    display: none;
+  }
+
+}

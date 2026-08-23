@@ -11,6 +11,15 @@ body {
   overflow-x: hidden;
 }
 
+/* =========================
+   GLOBAL BOX SIZING
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 /* =========================
    HERO
@@ -33,20 +42,17 @@ body {
   position: relative;
 }
 
-
 /* =========================
    LEFT CONTENT
 ========================= */
 
 .hero-content {
   width: 45%;
-
   padding-left: 10%;
 
   position: relative;
   z-index: 2;
 }
-
 
 /* =========================
    MAIN HEADING
@@ -57,7 +63,6 @@ body {
 
   font-size: 54px;
   font-weight: 600;
-
   line-height: 1.15;
 
   color: #ffffff;
@@ -67,15 +72,12 @@ body {
   max-width: 500px;
 }
 
-
 /* PAVANI BLUE COLOR */
 
 .hero-content h1 span {
   color: #3f8ee8;
-
   font-weight: 700;
 }
-
 
 /* =========================
    SOFTWARE DEVELOPER
@@ -86,14 +88,12 @@ body {
 
   font-size: 32px;
   font-weight: 600;
-
   line-height: 1.3;
 
   color: #ffffff;
 
   letter-spacing: -0.5px;
 }
-
 
 /* =========================
    DESCRIPTION
@@ -106,12 +106,10 @@ body {
 
   font-size: 17px;
   font-weight: 400;
-
   line-height: 1.8;
 
   color: rgba(255, 255, 255, 0.9);
 }
-
 
 /* =========================
    BUTTONS
@@ -124,7 +122,6 @@ body {
 
   margin-top: 28px;
 }
-
 
 .hero-buttons button {
   min-width: 150px;
@@ -144,7 +141,6 @@ body {
     box-shadow 0.25s ease;
 }
 
-
 /* PRIMARY BUTTON */
 
 .hero-buttons .btn-one {
@@ -163,7 +159,6 @@ body {
     rgba(20, 108, 220, 0.3);
 }
 
-
 .hero-buttons .btn-one:hover {
   transform: translateY(-2px);
 
@@ -171,7 +166,6 @@ body {
     0 12px 30px
     rgba(20, 108, 220, 0.45);
 }
-
 
 /* SECONDARY BUTTON */
 
@@ -186,13 +180,11 @@ body {
   backdrop-filter: blur(5px);
 }
 
-
 .hero-buttons button:not(.btn-one):hover {
   background: rgba(255, 255, 255, 0.18);
 
   transform: translateY(-2px);
 }
-
 
 /* =========================
    3D AREA
@@ -210,14 +202,12 @@ body {
   flex-shrink: 0;
 }
 
-
 .hero-3d canvas {
   width: 100% !important;
   height: 100% !important;
 
   display: block;
 }
-
 
 /* =========================
    TABLET
@@ -226,33 +216,62 @@ body {
 @media (min-width: 769px) and (max-width: 1100px) {
 
   .hero-content {
-    width: 45%;
+    width: 48%;
 
-    padding-left: 5%;
+    padding-left: 14%;
+    padding-right: 20px;
   }
 
+  .hero-small-text {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
 
   .hero-content h1 {
     font-size: 44px;
-  }
 
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+  }
 
   .hero-content h2 {
     font-size: 25px;
-  }
 
+    margin-top: 12px;
+  }
 
   .hero-description {
+    max-width: 400px;
+
     font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-top: 18px;
   }
 
+  .hero-buttons {
+    gap: 14px;
+
+    margin-top: 25px;
+  }
+
+  .hero-buttons button {
+    min-width: 135px;
+
+    padding: 13px 18px;
+
+    font-size: 15px;
+  }
+
+  /* 🔒 KEEP 3D AREA */
 
   .hero-3d {
-    width: 55%;
+    width: 52%;
     height: 80vh;
   }
 }
-
 
 /* =========================
    MOBILE
@@ -266,55 +285,139 @@ body {
     flex-direction: column;
 
     justify-content: center;
+
+    align-items: center;
   }
 
+  /* =========================
+     MOBILE HERO CONTENT
+  ========================= */
 
   .hero-content {
     width: 100%;
 
+    /*
+      Important:
+      box-sizing: border-box prevents
+      padding from making the element
+      wider than the viewport.
+    */
+
     padding: 100px 20px 0;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+  .hero-small-text {
+    font-size: 16px;
+
+    margin-bottom: 8px;
 
     text-align: center;
   }
 
+  /* =========================
+     MOBILE H1
+  ========================= */
 
   .hero-content h1 {
-    font-size: 40px;
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: clamp(34px, 9vw, 42px);
+
+    line-height: 1.15;
 
     letter-spacing: -1px;
+
+    text-align: center;
   }
 
+  /* ONLY SPAN INSIDE H1 */
+
+  .hero-content h1 span {
+    font-size: inherit;
+
+    color: #3f8ee8;
+
+    font-weight: 700;
+  }
+
+  /* =========================
+     MOBILE H2
+  ========================= */
 
   .hero-content h2 {
+    width: 100%;
+
+    margin-top: 10px;
+
     font-size: 22px;
+
+    text-align: center;
   }
 
+  /* =========================
+     MOBILE DESCRIPTION
+  ========================= */
 
   .hero-description {
+    width: 100%;
+
     max-width: 360px;
+
+    margin-top: 18px;
 
     margin-left: auto;
     margin-right: auto;
 
     font-size: 15px;
+
+    line-height: 1.7;
+
+    text-align: center;
   }
 
+  /* =========================
+     MOBILE BUTTONS
+  ========================= */
 
   .hero-buttons {
+    width: 100%;
+
+    display: flex;
+
     justify-content: center;
 
-    gap: 12px;
-  }
+    align-items: center;
 
+    gap: 12px;
+
+    margin-top: 24px;
+  }
 
   .hero-buttons button {
     min-width: auto;
 
-    padding: 13px 20px;
+    padding: 13px 18px;
 
     font-size: 15px;
   }
 
+  /* =========================
+     3D AREA
+     🔒 KEEP WORKING
+  ========================= */
 
   .hero-3d {
     width: 100%;
@@ -322,5 +425,101 @@ body {
     height: 45vh;
 
     flex-shrink: 0;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+   536px AND BELOW
+========================= */
+
+@media (max-width: 536px) {
+
+  .hero-content {
+    width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    font-size: clamp(32px, 10vw, 40px);
+
+    letter-spacing: -0.8px;
+  }
+
+  .hero-content h1 span {
+    font-size: inherit;
+  }
+
+  .hero-content h2 {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 21px;
+  }
+
+  .hero-description {
+    max-width: 340px;
+
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .hero-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 10vw, 36px);
+
+    letter-spacing: -0.5px;
+  }
+
+  .hero-content h2 {
+    font-size: 19px;
+  }
+
+  .hero-description {
+    max-width: 320px;
+
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-buttons button {
+    padding: 12px 15px;
+
+    font-size: 14px;
   }
 }

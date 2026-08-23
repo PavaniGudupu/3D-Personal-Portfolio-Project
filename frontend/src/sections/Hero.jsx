@@ -1,6 +1,6 @@
 import Scene from "../components/Scene";
-import Environment from "../components/Environment";
 import Navbar from "../components/Navbar";
+import SocialLinks from "../components/SocialLinks";
 
 import "../styles/Hero.css";
 
@@ -8,21 +8,21 @@ const Hero = () => {
   return (
     <section className="hero">
 
-      {/* FULL SCREEN BACKGROUND */}
-      <Environment />
-
       {/* NAVBAR */}
       <Navbar />
+
+      {/* SOCIAL LINKS */}
+       <SocialLinks />
 
       {/* HERO CONTENT */}
       <div className="hero-content">
 
-        {/* <p className="hero-small-text">
-          Hi, I'm
-        </p> */}
+        <p className="hero-small-text">
+          Hello, I'm
+        </p>
 
         <h1>
-          Hi, I'm <span>Pavani</span>
+          <span>Pavani</span> Gudupu
         </h1>
 
         <h2>
