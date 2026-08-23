@@ -92,3 +92,58 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+// import "../styles/Navbar.css";
+
+// const Navbar = () => {
+//   return (
+//     <nav className="navbar">
+
+//       <div className="navbar-logo">
+//         PAVANI
+//       </div>
+
+//       <div className="navbar-links">
+//         <a href="#home" className="active">
+//           Home
+//         </a>
+
+//         <a href="#about">
+//           About
+//         </a>
+
+//         <a href="#projects">
+//           Projects
+//         </a>
+
+//         <a href="#contact">
+//           Contact
+//         </a>
+//       </div>
+
+//       <button className="theme-toggle">
+//         ☀️
+//       </button>
+
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+

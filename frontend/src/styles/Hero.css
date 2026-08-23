@@ -1,4 +1,3 @@
-
 html,
 body {
   margin: 0;
@@ -13,6 +12,10 @@ body {
 }
 
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -26,6 +29,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  position: relative;
 }
 
 
@@ -36,73 +41,175 @@ body {
 .hero-content {
   width: 45%;
 
-  padding-left: 8%;
+  padding-left: 10%;
 
   position: relative;
   z-index: 2;
 }
 
-.hero-small-text {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
+
+/* =========================
+   MAIN HEADING
+========================= */
 
 .hero-content h1 {
-  font-size: 64px;
-
   margin: 0;
 
-  line-height: 1.1;
+  font-size: 54px;
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  color: #ffffff;
+
+  letter-spacing: -1.5px;
+
+  max-width: 500px;
 }
+
+
+/* PAVANI BLUE COLOR */
+
+.hero-content h1 span {
+  color: #3f8ee8;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   SOFTWARE DEVELOPER
+========================= */
 
 .hero-content h2 {
-  font-size: 28px;
+  margin-top: 10px;
 
-  margin-top: 12px;
+  font-size: 32px;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  color: #ffffff;
+
+  letter-spacing: -0.5px;
 }
+
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .hero-description {
-  max-width: 500px;
+  max-width: 440px;
 
-  font-size: 18px;
+  margin-top: 22px;
 
-  line-height: 1.7;
+  font-size: 17px;
+  font-weight: 400;
 
-  margin-top: 20px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.9);
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons {
   display: flex;
 
-  gap: 15px;
+  gap: 20px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
-.hero-buttons button {
-  padding: 12px 22px;
 
-  border: none;
+.hero-buttons button {
+  min-width: 150px;
+
+  padding: 14px 24px;
 
   border-radius: 8px;
 
   cursor: pointer;
 
   font-size: 16px;
+  font-weight: 500;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* PRIMARY BUTTON */
+
+.hero-buttons .btn-one {
+  border: none;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #1976e9,
+    #0d5fc9
+  );
+
+  box-shadow:
+    0 8px 25px
+    rgba(20, 108, 220, 0.3);
+}
+
+
+.hero-buttons .btn-one:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(20, 108, 220, 0.45);
+}
+
+
+/* SECONDARY BUTTON */
+
+.hero-buttons button:not(.btn-one) {
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(5px);
+}
+
+
+.hero-buttons button:not(.btn-one):hover {
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-2px);
 }
 
 
 /* =========================
    3D AREA
+   🔒 KEEP WORKING LAYOUT
 ========================= */
 
 .hero-3d {
   width: 55%;
   height: 100vh;
+
   position: relative;
+
   overflow: hidden;
+
   flex-shrink: 0;
 }
+
 
 .hero-3d canvas {
   width: 100% !important;
@@ -124,17 +231,21 @@ body {
     padding-left: 5%;
   }
 
+
   .hero-content h1 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
+
   .hero-content h2 {
-    font-size: 24px;
+    font-size: 25px;
   }
+
 
   .hero-description {
     font-size: 16px;
   }
+
 
   .hero-3d {
     width: 55%;
@@ -157,34 +268,53 @@ body {
     justify-content: center;
   }
 
+
   .hero-content {
     width: 100%;
 
-    padding: 70px 20px 0;
+    padding: 100px 20px 0;
 
     text-align: center;
   }
 
+
   .hero-content h1 {
-    font-size: 42px;
+    font-size: 40px;
+
+    letter-spacing: -1px;
   }
+
 
   .hero-content h2 {
     font-size: 22px;
   }
 
+
   .hero-description {
-    max-width: 500px;
+    max-width: 360px;
 
     margin-left: auto;
     margin-right: auto;
 
-    font-size: 16px;
+    font-size: 15px;
   }
+
 
   .hero-buttons {
     justify-content: center;
+
+    gap: 12px;
   }
+
+
+  .hero-buttons button {
+    min-width: auto;
+
+    padding: 13px 20px;
+
+    font-size: 15px;
+  }
+
 
   .hero-3d {
     width: 100%;
@@ -194,9 +324,3 @@ body {
     flex-shrink: 0;
   }
 }
-
-
-
-
-
-

@@ -17,12 +17,12 @@ const Hero = () => {
       {/* HERO CONTENT */}
       <div className="hero-content">
 
-        <p className="hero-small-text">
-          Hello, I'm
-        </p>
+        {/* <p className="hero-small-text">
+          Hi, I'm
+        </p> */}
 
         <h1>
-          Pavani Gudupu
+          Hi, I'm <span>Pavani</span>
         </h1>
 
         <h2>
@@ -35,7 +35,7 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <button>
+          <button className="btn-one">
             View Projects
           </button>
 
