@@ -25,7 +25,44 @@ body {
    HERO
 ========================= */
 
+/* =========================
+   DAY MODE
+========================= */
+
+.hero.day-mode {
+  background-image: url("/day-background.png");
+}
+
+
+/* =========================
+   NIGHT MODE
+========================= */
+
+.hero.night-mode {
+  background-image: url("/night-background.png");
+}
+
+
 .hero {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  transition: background-image 0.4s ease;
+}
+
+
+/* .hero {
   width: 100%;
   min-height: 100vh;
 
@@ -40,7 +77,7 @@ body {
   background-repeat: no-repeat;
 
   position: relative;
-}
+} */
 
 /* =========================
    LEFT CONTENT
@@ -75,13 +112,27 @@ body {
 /* PAVANI BLUE COLOR */
 
 .hero-content h1 span {
-  color: #3f8ee8;
+  color: #a2ccff;
   font-weight: 700;
 }
 
 /* =========================
    SOFTWARE DEVELOPER
 ========================= */
+
+.hero-small-text {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.3;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  letter-spacing: 0;
+}
 
 .hero-content h2 {
   margin-top: 10px;
@@ -159,7 +210,7 @@ body {
     rgba(20, 108, 220, 0.3);
 }
 
-.hero-buttons .btn-one:hover {
+/* .hero-buttons .btn-one:hover {
   transform: translateY(-2px);
 
   box-shadow:
@@ -169,7 +220,7 @@ body {
 
 /* SECONDARY BUTTON */
 
-.hero-buttons button:not(.btn-one) {
+/* .hero-buttons button:not(.btn-one) {
   background: rgba(255, 255, 255, 0.08);
 
   color: #ffffff;
@@ -184,7 +235,37 @@ body {
   background: rgba(255, 255, 255, 0.18);
 
   transform: translateY(-2px);
+}  */
+
+.hero-buttons .btn-one:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(20, 108, 220, 0.45);
 }
+
+
+/* SECONDARY BUTTON */
+
+.hero-buttons button:not(.btn-one) {
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(5px);
+}
+
+
+.hero-buttons button:not(.btn-one):hover {
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-2px);
+}
+
 
 /* =========================
    3D AREA

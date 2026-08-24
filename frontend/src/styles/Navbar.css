@@ -110,7 +110,7 @@
    THEME TOGGLE
 ========================= */
 
-.theme-toggle {
+/* .theme-toggle {
   width: 64px;
 
   height: 34px;
@@ -158,8 +158,66 @@
   font-size: 13px;
 
   background: rgba(0, 80, 150, 0.8);
+} */
+
+
+.theme-toggle {
+  width: 72px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 4px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: 0.3s ease;
 }
 
+
+.theme-icon {
+  font-size: 20px;
+
+  z-index: 2;
+}
+
+
+.theme-circle {
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+
+  right: 4px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+
+/* NIGHT STATE */
+
+.theme-toggle.active .theme-circle {
+  transform: translateX(-34px);
+}
+
+
+.theme-toggle.active {
+  background: rgba(10, 35, 75, 0.7);
+}
 
 /* =========================
    MOBILE MENU BUTTON

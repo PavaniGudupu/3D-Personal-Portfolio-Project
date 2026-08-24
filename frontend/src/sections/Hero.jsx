@@ -1,18 +1,30 @@
+import { useState } from "react";
+
 import Scene from "../components/Scene";
 import Navbar from "../components/Navbar";
+import { FaArrowRight } from "react-icons/fa6";
 import SocialLinks from "../components/SocialLinks";
 
 import "../styles/Hero.css";
 
 const Hero = () => {
+
+  const [isNight, setIsNight] = useState(false);
+
   return (
-    <section className="hero">
+
+    <section
+      className={`hero ${isNight ? "night-mode" : "day-mode"}`}
+    >
 
       {/* NAVBAR */}
-      <Navbar />
+      <Navbar
+        isNight={isNight}
+        setIsNight={setIsNight}
+      />
 
       {/* SOCIAL LINKS */}
-       <SocialLinks />
+      <SocialLinks />
 
       {/* HERO CONTENT */}
       <div className="hero-content">
@@ -35,13 +47,15 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
+
           <button className="btn-one">
-            View Projects
+            View Projects <FaArrowRight />
           </button>
 
           <button>
             Contact Me
           </button>
+
         </div>
 
       </div>
