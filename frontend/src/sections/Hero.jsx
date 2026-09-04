@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Scene from "../components/Scene";
 import Navbar from "../components/Navbar";
 import { FaArrowRight } from "react-icons/fa6";
@@ -7,10 +5,7 @@ import SocialLinks from "../components/SocialLinks";
 
 import "../styles/Hero.css";
 
-const Hero = () => {
-
-  const [isNight, setIsNight] = useState(false);
-
+const Hero = ({ isNight, setIsNight }) => {  
   return (
 
     <section

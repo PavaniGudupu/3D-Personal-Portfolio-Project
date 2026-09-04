@@ -1,0 +1,25 @@
+Next step
+
+Make the Day/Night toggle actually work:
+
+Then after that:
+
+Connect navbar links with sections
+Build About section
+Build Projects section
+Build Contact section
+Final animations and polishsi 
+
+
+3D objects
+
+https://sketchfab.com/Moonshin/collections/garden-909a23ba042b4487941049e3e60d168b
+
+
+Bugs:
+1. 3D object, loading was so delay. Loading option
+2. Mouse cursor, at bottom of hero section 
+3. Remove side scroller
+4. Night view, 3D object change
+5. Background image of About section - fixed and responsive even after zoom in and out. same as hero
+6. 
