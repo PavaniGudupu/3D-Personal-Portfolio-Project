@@ -1,0 +1,48 @@
+Next step
+
+Make the Day/Night toggle actually work:
+
+Then after that:
+
+Connect navbar links with sections
+Build About section
+Build Projects section
+Build Contact section
+Final animations and polishsi 
+
+
+3D objects
+
+https://sketchfab.com/Moonshin/collections/garden-909a23ba042b4487941049e3e60d168b
+
+Stylized chinese blacksmith adapted
+https://sketchfab.com/3d-models/stylized-chinese-blacksmith-adapted-d733793dc4d14c23b08ed7109ae52be7
+https://sketchfab.com/3d-models/little-shrine-arthur-sirjacobs-a5589d24c8454dee874cba6528cdd8fb
+https://sketchfab.com/3d-models/25-tree-reworked-9e1ee59c87e64e3c9db6e919db053891
+https://sketchfab.com/3d-models/ancient-building-67cb9a3e46b74dabb8d6ad0b20ab7e11
+https://sketchfab.com/3d-models/animated-fantasy-ice-island-pointing-characters-9485c7f850ac48aeabca40a883293b36
+
+https://sketchfab.com/3d-models/stylised-sky-player-home-dioroma-6597e6c9a5184f07a638ac33c08c2ad5
+
+https://sketchfab.com/3d-models/monster-bb37d9f7239a40bfaa78fb6075fc271f
+https://sketchfab.com/3d-models/madrona-invasives-6e1e4cf5c6d74da286cbf425a939c9ce
+https://sketchfab.com/3d-models/supersushi-lowpoly-stylized-food-cart-9a1da5e235914ab8892360fec1df02af
+
+
+Isle Of Hoole | Great Ga'Hoole 
+DAE Diorama Retake - Pictur
+DioramaDinosaurPark
+Sawmill in a broad daylight
+Insect Bazaar DAEcrib
+
+
+#d4ff38
+
+
+Bugs:
+1. 3D object, loading was so delay. Loading option
+2. Mouse cursor, at bottom of hero section 
+3. Remove side scroller
+4. Night view, 3D object change
+5. Background image of About section - fixed and responsive even after zoom in and out. same as hero
+6. 
