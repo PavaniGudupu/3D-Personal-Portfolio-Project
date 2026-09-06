@@ -8,7 +8,7 @@ import "../styles/Hero.css";
 const Hero = ({ isNight, setIsNight }) => {  
   return (
 
-    <section
+    <section id="home" 
       className={`hero ${isNight ? "night-mode" : "day-mode"}`}
     >
 
