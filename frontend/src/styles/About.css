@@ -1,0 +1,1026 @@
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+/* .about {
+    
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 110px 5% 80px;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+} */
+
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  padding: 110px 5% 80px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+
+/* DAY */
+
+.about.day-mode {
+  background-image: url("/about-day-background.png");
+  color: #102542;
+}
+
+
+/* NIGHT */
+
+.about.night-mode {
+  background-image: url("/about-night-background.png");
+  color: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 85px 20px 60px;
+    background-position: center;
+  }
+}
+
+
+
+
+/* =====================================================
+   DAY THEME
+===================================================== */
+
+.about-day {
+  background:
+    radial-gradient(
+      circle at 10% 30%,
+      rgba(73, 155, 255, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(90, 170, 255, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #eef8ff,
+      #dceeff 45%,
+      #f8fcff
+    );
+
+  color: #102542;
+}
+
+
+/* =====================================================
+   NIGHT THEME
+===================================================== */
+
+.about-night {
+  background:
+    radial-gradient(
+      circle at 10% 30%,
+      rgba(25, 110, 220, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(77, 70, 220, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #020b1c,
+      #06172f 45%,
+      #020a18
+    );
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.about-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.about-glow-one {
+  width: 280px;
+  height: 280px;
+
+  top: 15%;
+  left: -100px;
+
+  background: rgba(35, 130, 255, 0.16);
+}
+
+.about-glow-two {
+  width: 320px;
+  height: 320px;
+
+  bottom: 5%;
+  right: -120px;
+
+  background: rgba(45, 105, 255, 0.14);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.about-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 0 0 14px;
+
+  color: #1789ed;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.section-label span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #3d8fff;
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 5vw, 72px);
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+.about-heading h2 span {
+  color: #2189ed;
+}
+
+
+/* =====================================================
+   MAIN ABOUT AREA
+===================================================== */
+
+.about-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(350px, 0.9fr)
+    minmax(500px, 1.1fr);
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+.about-visual {
+  position: relative;
+
+  min-height: 570px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   PHOTO FRAME
+===================================================== */
+
+.about-photo-frame {
+  position: relative;
+
+  width: 400px;
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius:
+    210px
+    210px
+    170px
+    170px;
+
+  border: 5px solid #4a8fff;
+
+  box-shadow:
+    0 0 30px rgba(44, 137, 255, 0.35),
+    0 0 80px rgba(44, 137, 255, 0.12);
+
+  z-index: 3;
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center 25%;
+}
+
+
+/* =====================================================
+   DECORATIVE RINGS
+===================================================== */
+
+.about-ring {
+  position: absolute;
+
+  border: 1px solid rgba(45, 135, 255, 0.35);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.ring-one {
+  width: 480px;
+  height: 560px;
+}
+
+.ring-two {
+  width: 540px;
+  height: 620px;
+}
+
+.ring-three {
+  width: 600px;
+  height: 680px;
+}
+
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.about-signature {
+  position: absolute;
+
+  left: 3%;
+  bottom: 115px;
+
+  font-family: cursive;
+
+  font-size: 38px;
+
+  font-style: italic;
+
+  color: #7ba8ff;
+
+  transform: rotate(-8deg);
+
+  z-index: 5;
+
+  text-shadow:
+    0 0 15px rgba(65, 130, 255, 0.4);
+}
+
+
+/* =====================================================
+   PASSION CARD
+===================================================== */
+
+.passion-card {
+  position: absolute;
+
+  right: 0;
+  bottom: 10px;
+
+  width: 260px;
+
+  padding: 22px 26px;
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(61, 145, 255, 0.55);
+
+  z-index: 6;
+}
+
+.about-day .passion-card {
+  background: rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 15px 40px rgba(193, 217, 241, 0.15);
+}
+
+.about-night .passion-card {
+  background: rgba(8, 30, 65, 0.75);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.passion-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 14px;
+
+  color: #7294bd;
+}
+
+.about-night .passion-card span {
+  color: #9ab5d9;
+}
+
+.passion-card strong {
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+.passion-card b {
+  color: #248df2;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.about-info {
+  width: 100%;
+}
+
+.about-info h3 {
+  margin: 0 0 22px;
+
+  font-size: clamp(25px, 2.5vw, 34px);
+
+  line-height: 1.3;
+
+  font-weight: 600;
+}
+
+.about-info h3 span {
+  color: #2189ed;
+}
+
+.about-info > p {
+  max-width: 680px;
+
+  margin: 0 0 18px;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   DETAILS + QUOTE
+===================================================== */
+
+.about-details-wrapper {
+  display: grid;
+
+  grid-template-columns: 1fr 260px;
+
+  gap: 35px;
+
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.about-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.detail-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.detail-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #268cf5;
+
+  border: 1px solid rgba(39, 140, 245, 0.55);
+
+  background: rgba(45, 140, 245, 0.08);
+
+  font-size: 21px;
+}
+
+.detail-item span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #1889ef;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.detail-item p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.about-quote {
+  position: relative;
+
+  min-height: 190px;
+
+  padding: 25px 24px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(49, 139, 245, 0.55);
+
+  backdrop-filter: blur(15px);
+}
+
+.about-day .about-quote {
+  background: rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 15px 35px rgba(40, 100, 160, 0.12);
+}
+
+.about-night .about-quote {
+  background: rgba(10, 35, 72, 0.6);
+}
+
+.quote-mark {
+  color: #378fff;
+
+  font-size: 50px;
+
+  line-height: 0.7;
+}
+
+.about-quote p {
+  margin: 15px 0;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+.about-quote p span {
+  color: #218df4;
+
+  font-weight: 700;
+}
+
+.quote-line {
+  width: 35px;
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: #258cf0;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.about-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 65px;
+}
+
+.stat-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  min-height: 100px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(45, 140, 245, 0.45);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.about-day .stat-card {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.about-night .stat-card {
+  background: rgba(7, 29, 61, 0.65);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #2b91f5;
+}
+
+.stat-card > svg {
+  color: #268ff3;
+
+  font-size: 25px;
+}
+
+.stat-card strong {
+  display: block;
+
+  color: #218cf2;
+
+  font-size: 25px;
+}
+
+.stat-card span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 13px;
+
+  opacity: 0.75;
+}
+
+
+/* =====================================================
+   TECH STACK
+===================================================== */
+
+.tech-stack {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  margin-top: 35px;
+
+  padding: 22px 30px;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(45, 140, 245, 0.4);
+
+  backdrop-filter: blur(15px);
+}
+
+.about-day .tech-stack {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.about-night .tech-stack {
+  background: rgba(7, 27, 57, 0.65);
+}
+
+.tech-title {
+  flex-shrink: 0;
+
+  color: #218cf2;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.tech-list {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.tech-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 5px 12px;
+
+  border-right: 1px solid
+    rgba(100, 150, 200, 0.25);
+
+  font-size: 14px;
+}
+
+.tech-item:last-child {
+  border-right: none;
+}
+
+.tech-item svg {
+  font-size: 22px;
+
+  color: #278ff3;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .about {
+    padding: 100px 4% 70px;
+  }
+
+  .about-main {
+    grid-template-columns:
+      minmax(300px, 0.85fr)
+      minmax(400px, 1.15fr);
+
+    gap: 45px;
+  }
+
+  .about-photo-frame {
+    width: 330px;
+    height: 460px;
+  }
+
+  .ring-one {
+    width: 410px;
+    height: 500px;
+  }
+
+  .ring-two {
+    width: 460px;
+    height: 550px;
+  }
+
+  .ring-three {
+    display: none;
+  }
+
+  .passion-card {
+    width: 220px;
+  }
+
+  .about-details-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-quote {
+    max-width: 350px;
+  }
+
+  .tech-stack {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tech-list {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 15px;
+  }
+
+  .tech-item:nth-child(4) {
+    border-right: none;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 85px 20px 60px;
+  }
+
+  .about-heading {
+    margin-bottom: 40px;
+  }
+
+  .about-heading h2 {
+    font-size: 45px;
+  }
+
+  .section-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* IMAGE */
+
+  .about-main {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-visual {
+    min-height: 480px;
+  }
+
+  .about-photo-frame {
+    width: min(310px, 80vw);
+
+    height: 410px;
+
+    border-radius:
+      170px
+      170px
+      140px
+      140px;
+  }
+
+  .ring-one {
+    width: 360px;
+    height: 450px;
+  }
+
+  .ring-two {
+    display: none;
+  }
+
+  .about-signature {
+    left: 3%;
+
+    bottom: 95px;
+
+    font-size: 30px;
+  }
+
+  .passion-card {
+    right: 0;
+
+    bottom: 0;
+
+    width: 210px;
+
+    padding: 16px 18px;
+  }
+
+
+  /* CONTENT */
+
+  .about-info h3 {
+    font-size: 26px;
+
+    text-align: center;
+  }
+
+  .about-info > p {
+    text-align: center;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .about-details-wrapper {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .detail-item {
+    gap: 13px;
+  }
+
+  .detail-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 18px;
+  }
+
+  .detail-item p {
+    font-size: 14px;
+  }
+
+  .about-quote {
+    width: 100%;
+
+    max-width: none;
+  }
+
+
+  /* STATS */
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 45px;
+  }
+
+  .stat-card {
+    min-height: 90px;
+
+    gap: 10px;
+  }
+
+
+  /* TECH STACK */
+
+  .tech-stack {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    gap: 20px;
+  }
+
+  .tech-list {
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+  }
+
+  .tech-item {
+    justify-content: flex-start;
+
+    border-right: none;
+
+    border-bottom: 1px solid
+      rgba(100, 150, 200, 0.2);
+
+    padding: 10px 5px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .about {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .about-heading h2 {
+    font-size: 40px;
+  }
+
+  .about-photo-frame {
+    width: 275px;
+    height: 375px;
+  }
+
+  .ring-one {
+    width: 320px;
+    height: 410px;
+  }
+
+  .passion-card {
+    width: 190px;
+
+    font-size: 13px;
+  }
+
+  .about-stats {
+    gap: 10px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 5px;
+  }
+
+  .tech-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}

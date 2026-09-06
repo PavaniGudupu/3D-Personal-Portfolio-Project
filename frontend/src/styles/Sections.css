@@ -1,0 +1,29 @@
+.portfolio-section {
+  min-height: 100vh;
+
+  padding: 100px 10%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #081a32;
+
+  color: white;
+}
+
+.portfolio-section:nth-of-type(even) {
+  background: #0d2340;
+}
+
+.portfolio-section h2 {
+  font-size: 48px;
+
+  margin-bottom: 20px;
+}
+
+.portfolio-section p {
+  font-size: 18px;
+}

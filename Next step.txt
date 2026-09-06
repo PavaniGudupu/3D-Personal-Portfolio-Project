@@ -15,6 +15,7 @@ Final animations and polishsi
 
 https://sketchfab.com/Moonshin/collections/garden-909a23ba042b4487941049e3e60d168b
 
+<<<<<<< HEAD
 Stylized chinese blacksmith adapted
 https://sketchfab.com/3d-models/stylized-chinese-blacksmith-adapted-d733793dc4d14c23b08ed7109ae52be7
 https://sketchfab.com/3d-models/little-shrine-arthur-sirjacobs-a5589d24c8454dee874cba6528cdd8fb
@@ -38,6 +39,8 @@ Insect Bazaar DAEcrib
 
 #d4ff38
 
+=======
+>>>>>>> feature/projects-section
 
 Bugs:
 1. 3D object, loading was so delay. Loading option

@@ -1,0 +1,768 @@
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+
+.projects {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  padding: 120px 5% 90px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+
+}
+
+
+/* =====================================================
+   DAY / NIGHT BACKGROUND
+===================================================== */
+
+/* .projects.day-mode {
+
+  background-image:
+    linear-gradient(
+      rgba(240, 249, 255, 0.747),
+      rgba(232, 244, 255, 0.88)
+    ),
+    url("/projects-day-background.png");
+
+  color: #102542;
+
+} */
+
+
+.projects.day-mode {
+
+  background-image:
+    linear-gradient(
+        rgb(190, 221, 255),
+rgba(229, 221, 247, 0.733)
+
+),
+    url("/projects-day-background.png");
+
+  color: #102542;
+
+}
+
+.projects.night-mode {
+
+  background-image:
+    linear-gradient(
+      rgb(0, 28, 54),
+      rgba(25, 0, 83, 0.63)
+    ),
+    url("/projects-day-background.png");
+
+  color: #ffffff;
+
+}
+
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.projects-glow {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+
+}
+
+
+.projects-glow-one {
+
+  width: 320px;
+  height: 320px;
+
+  left: -140px;
+  top: 25%;
+
+  background: rgba(40, 140, 255, 0.15);
+
+}
+
+
+.projects-glow-two {
+
+  width: 350px;
+  height: 350px;
+
+  right: -150px;
+  bottom: 10%;
+
+  background: rgba(50, 110, 255, 0.13);
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.projects-container {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.projects-heading {
+
+  text-align: center;
+
+  max-width: 760px;
+
+  margin: 0 auto 70px;
+
+}
+
+
+.section-label {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+
+  color: #1689ed;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+}
+
+
+.section-label span {
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #348fff;
+
+}
+
+
+.projects-heading h2 {
+
+  margin: 0;
+
+  font-size: clamp(45px, 5vw, 72px);
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+
+}
+
+
+.projects-heading h2 span {
+
+  color: #218cf2;
+
+}
+
+
+.projects-intro {
+
+  max-width: 650px;
+
+  margin: 25px auto 0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  opacity: 0.75;
+
+}
+
+
+/* =====================================================
+   SHOWCASE
+===================================================== */
+
+.projects-showcase {
+
+  position: relative;
+
+}
+
+
+/* =====================================================
+   3D ORBIT ACCENT
+===================================================== */
+
+.project-orbit {
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  opacity: 0.45;
+
+}
+
+
+.orbit-ring {
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid rgba(40, 140, 245, 0.20);
+
+  border-radius: 50%;
+
+}
+
+
+.orbit-ring-one {
+
+  transform: rotate(20deg) scaleY(0.45);
+
+}
+
+
+.orbit-ring-two {
+
+  transform: rotate(-35deg) scaleY(0.45);
+
+}
+
+
+.orbit-dot {
+
+  position: absolute;
+
+  width: 8px;
+
+  height: 8px;
+
+  top: 12%;
+
+  right: 18%;
+
+  border-radius: 50%;
+
+  background: #278ef3;
+
+  box-shadow:
+    0 0 15px rgba(39, 142, 243, 0.8),
+    0 0 30px rgba(39, 142, 243, 0.4);
+
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.projects-grid {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding: 30px;
+
+  border-radius: 26px;
+
+  border: 1px solid rgba(42, 140, 245, 0.38);
+
+  backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+}
+
+
+.projects.day-mode .project-card {
+
+  background: rgba(255, 255, 255, 0.68);
+
+  box-shadow:
+    0 20px 50px rgba(45, 100, 160, 0.10);
+
+}
+
+
+.projects.night-mode .project-card {
+
+  background: rgba(6, 27, 57, 0.70);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.30);
+
+}
+
+
+.project-card:hover {
+
+  transform: translateY(-10px);
+
+  border-color: rgba(42, 145, 250, 0.85);
+
+  box-shadow:
+    0 25px 60px rgba(25, 125, 235, 0.16);
+
+}
+
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.project-card-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+}
+
+
+.project-number {
+
+  color: #278ff3;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+
+.project-category {
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  color: #268cf2;
+
+  border: 1px solid rgba(39, 140, 245, 0.30);
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.project-card-content {
+
+  margin-top: 45px;
+
+}
+
+
+.project-card-content h3 {
+
+  margin: 0 0 15px;
+
+  font-size: 27px;
+
+  font-weight: 600;
+
+}
+
+
+.project-card-content p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  opacity: 0.75;
+
+}
+
+
+/* =====================================================
+   TECHNOLOGIES
+===================================================== */
+
+.project-tech {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+}
+
+
+.project-tech span {
+
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  background: rgba(39, 140, 245, 0.08);
+
+  border: 1px solid rgba(39, 140, 245, 0.18);
+
+  color: #238cf2;
+
+  font-size: 11px;
+
+}
+
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.project-card-footer {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 30px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(100, 150, 200, 0.18);
+
+}
+
+
+.project-card-footer a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: color 0.25s ease;
+
+}
+
+
+.project-card-footer a:hover {
+
+  color: #218cf2;
+
+}
+
+
+.project-card-footer svg {
+
+  color: #218cf2;
+
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.projects-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 55px;
+
+  opacity: 0.65;
+
+}
+
+
+.projects-bottom span {
+
+  width: 45px;
+
+  height: 1px;
+
+  background: rgba(50, 140, 240, 0.45);
+
+}
+
+
+.projects-bottom p {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.projects-bottom strong {
+
+  color: #218cf2;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .projects {
+
+    padding: 100px 4% 75px;
+
+  }
+
+
+  .projects-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+  .project-card:last-child {
+
+    grid-column: 1 / -1;
+
+    max-width: 500px;
+
+    width: 100%;
+
+    justify-self: center;
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .projects {
+
+    padding: 85px 20px 60px;
+
+  }
+
+
+  .projects-heading {
+
+    margin-bottom: 45px;
+
+  }
+
+
+  .projects-heading h2 {
+
+    font-size: 45px;
+
+  }
+
+
+  .section-label {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+  }
+
+
+  .projects-intro {
+
+    font-size: 14px;
+
+  }
+
+
+  .projects-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+  }
+
+
+  .project-card {
+
+    min-height: 360px;
+
+    padding: 24px;
+
+  }
+
+
+  .project-card:last-child {
+
+    grid-column: auto;
+
+    max-width: none;
+
+  }
+
+
+  .project-orbit {
+
+    width: 320px;
+
+    height: 320px;
+
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .projects {
+
+    padding-left: 14px;
+    padding-right: 14px;
+
+  }
+
+
+  .projects-heading h2 {
+
+    font-size: 40px;
+
+  }
+
+
+  .project-card {
+
+    padding: 20px;
+
+  }
+
+
+  .project-card-content h3 {
+
+    font-size: 24px;
+
+  }
+
+
+  .project-category {
+
+    font-size: 9px;
+
+  }
+
+}
