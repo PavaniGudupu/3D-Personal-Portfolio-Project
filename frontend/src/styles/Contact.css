@@ -36,8 +36,8 @@
     linear-gradient(
       /* rgba(239, 248, 255, 0.58),
       rgba(229, 243, 255, 0.68) */
-          rgba(239, 248, 255, 0),
-      rgba(229, 243, 255, 0)
+        rgba(239, 248, 255, 0.58),
+      rgba(229, 243, 255, 0.68)
     ),
     url("/contact-day-background.png");
 
@@ -52,8 +52,8 @@
     linear-gradient(
       /* rgba(2, 13, 35, 0.48),
       rgba(2, 15, 39, 0.62) */
-        rgba(2, 13, 35, 0),
-      rgba(2, 15, 39, 0)
+       rgba(2, 13, 35, 0.48),
+      rgba(2, 15, 39, 0.62)
     ),
     url("/contact-night-background.png");
 

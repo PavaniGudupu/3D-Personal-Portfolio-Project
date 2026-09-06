@@ -1,8 +1,22 @@
+
+
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+} from "react-icons/fa";
+
+import {
+  SiJavascript,
+  SiPostgresql,
+  SiThreedotjs,
+} from "react-icons/si";
+
 import {
   FaArrowUpRightFromSquare,
   FaGithub,
 } 
-
 from "react-icons/fa6";
 
 import "../styles/Projects.css";
@@ -57,6 +71,66 @@ const Projects = ({ isNight }) => {
 
       <div className="projects-glow projects-glow-one"></div>
       <div className="projects-glow projects-glow-two"></div>
+
+{/* CURVED TOP DIVIDER */}
+
+<div className="projects-wave projects-wave-top">
+  <svg
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+
+    <path
+      d="M0,35
+         C240,100 430,0 720,45
+         C980,85 1170,5 1440,35"
+    />
+    <span className="wave-dot wave-dot-three"></span>
+  </svg>
+
+  <span className="wave-dot wave-dot-one"></span>
+<span className="wave-dot wave-dot-two"></span>
+</div>
+
+
+{/* FLOATING TECHNOLOGIES */}
+
+<div className="floating-tech" aria-hidden="true">
+
+  <div className="tech-object tech-react">
+    <FaReact />
+  </div>
+
+  <div className="tech-object tech-node">
+    <FaNodeJs />
+  </div>
+
+  <div className="tech-object tech-postgres">
+    <SiPostgresql />
+  </div>
+
+  <div className="tech-object tech-github">
+    <FaGithub />
+  </div>
+
+  <div className="tech-object tech-three">
+    <SiThreedotjs />
+  </div>
+
+  <div className="tech-object tech-js">
+    <SiJavascript />
+  </div>
+
+  <div className="tech-object tech-html">
+    <FaHtml5 />
+  </div>
+
+  <div className="tech-object tech-css">
+    <FaCss3Alt />
+  </div>
+
+</div>
 
 
       <div className="projects-container">
@@ -214,6 +288,76 @@ const Projects = ({ isNight }) => {
 
 
       </div>
+      {/* CURVED TOP DIVIDER */}
+
+<div className="projects-wave projects-wave-top">
+  <svg
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M0,35
+         C240,100 430,0 720,45
+         C980,85 1170,5 1440,35"
+    />
+  </svg>
+</div>
+
+
+{/* FLOATING TECHNOLOGIES */}
+
+<div className="floating-tech" aria-hidden="true">
+
+  <div className="tech-object tech-react">
+    <FaReact />
+  </div>
+
+  <div className="tech-object tech-node">
+    <FaNodeJs />
+  </div>
+
+  <div className="tech-object tech-postgres">
+    <SiPostgresql />
+  </div>
+
+  <div className="tech-object tech-github">
+    <FaGithub />
+  </div>
+
+  <div className="tech-object tech-three">
+    <SiThreedotjs />
+  </div>
+
+  <div className="tech-object tech-js">
+    <SiJavascript />
+  </div>
+
+  <div className="tech-object tech-html">
+    <FaHtml5 />
+  </div>
+
+  <div className="tech-object tech-css">
+    <FaCss3Alt />
+  </div>
+
+</div>
+
+{/* CURVED BOTTOM DIVIDER */}
+
+<div className="projects-wave projects-wave-bottom">
+  <svg
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M0,80
+         C250,115 430,15 720,65
+         C980,110 1190,30 1440,60"
+    />
+  </svg>
+</div>
 
     </section>
 

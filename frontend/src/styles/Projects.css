@@ -25,6 +25,31 @@
 }
 
 
+.projects-3d {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.projects-container {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .projects-3d {
+    opacity: 0.45;
+  }
+}
+
+
 /* =====================================================
    DAY / NIGHT BACKGROUND
 ===================================================== */
@@ -43,7 +68,7 @@
 } */
 
 
-.projects.day-mode {
+/* .projects.day-mode {
 
   background-image:
     linear-gradient(
@@ -68,8 +93,33 @@ rgba(229, 221, 247, 0.733)
 
   color: #ffffff;
 
+} */
+
+
+.projects.day-mode {
+  background:
+    linear-gradient(
+      180deg,
+      #eef6ff 0%,
+      #f5f9ff 50%,
+      #edf5ff 100%
+    );
+
+  color: #102542;
 }
 
+
+.projects.night-mode {
+  background:
+    linear-gradient(
+      180deg,
+      #071a2f 0%,
+      #061526 55%,
+      #04111f 100%
+    );
+
+  color: #f5f9ff;
+}
 
 
 /* =====================================================
@@ -763,6 +813,389 @@ rgba(229, 221, 247, 0.733)
 
     font-size: 9px;
 
+  }
+
+}
+
+
+/* =====================================================
+   FLOATING TECHNOLOGY ICONS
+===================================================== */
+
+.floating-tech {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.tech-object {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
+
+  opacity: 0.92;
+
+  filter:
+    drop-shadow(
+      0 8px 15px rgba(35, 115, 210, 0.18)
+    );
+
+  animation:
+    techFloat 5s ease-in-out infinite;
+}
+
+
+/* REACT */
+
+.tech-react {
+  top: 15%;
+  left: 9%;
+
+  color: #61dafb;
+
+  font-size: 76px;
+
+  animation:
+    techFloat 5s ease-in-out infinite,
+    reactRotate 13s linear infinite;
+}
+
+
+/* NODE */
+
+.tech-node {
+  top: 34%;
+  left: 5%;
+
+  color: #55a84f;
+
+  font-size: 58px;
+
+  animation-delay: 0.8s;
+}
+
+
+/* POSTGRESQL */
+
+.tech-postgres {
+  bottom: 29%;
+  left: 6%;
+
+  color: #336791;
+
+  font-size: 57px;
+
+  animation-delay: 1.3s;
+}
+
+
+/* GITHUB */
+
+.tech-github {
+  bottom: 12%;
+  left: 10%;
+
+  color: #243b64;
+
+  font-size: 54px;
+
+  animation-delay: 0.4s;
+}
+
+
+/* THREE.JS */
+
+.tech-three {
+  top: 16%;
+  right: 8%;
+
+  color: #173152;
+
+  font-size: 67px;
+
+  animation:
+    techFloat 5.5s ease-in-out infinite,
+    techTilt 6s ease-in-out infinite;
+}
+
+
+/* JAVASCRIPT */
+
+.tech-js {
+  top: 36%;
+  right: 6%;
+
+  color: #f7df1e;
+
+  background: #222;
+
+  font-size: 45px;
+
+  border-radius: 5px;
+
+  animation-delay: 0.7s;
+}
+
+
+/* HTML */
+
+.tech-html {
+  bottom: 31%;
+  right: 6%;
+
+  color: #e34f26;
+
+  font-size: 61px;
+
+  animation-delay: 1.6s;
+}
+
+
+/* CSS */
+
+.tech-css {
+  bottom: 11%;
+  right: 10%;
+
+  color: #1572b6;
+
+  font-size: 59px;
+
+  animation-delay: 1s;
+}
+
+
+@keyframes techFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-3deg);
+  }
+
+  50% {
+    transform:
+      translateY(-18px)
+      rotate(3deg);
+  }
+
+}
+
+
+@keyframes reactRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes techTilt {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-6deg);
+  }
+
+  50% {
+    transform:
+      translateY(-15px)
+      rotate(7deg);
+  }
+
+}
+
+/* =====================================================
+   SECTION CURVES
+===================================================== */
+
+.projects-wave {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+
+.projects-wave svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.projects-wave path {
+  fill: none;
+
+  stroke: rgba(46, 148, 245, 0.55);
+
+  stroke-width: 2;
+}
+
+
+/* TOP */
+
+.projects-wave-top {
+  top: -3px;
+
+  height: 85px;
+}
+
+
+/* BOTTOM */
+
+.projects-wave-bottom {
+  bottom: -3px;
+
+  height: 90px;
+}
+
+
+.projects.night-mode .projects-wave path {
+  stroke: rgba(75, 175, 255, 0.50);
+}
+
+
+.wave-dot {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #2693f5;
+
+  box-shadow:
+    0 0 8px rgba(38, 147, 245, 0.8);
+}
+
+
+.wave-dot-one {
+  left: 21%;
+  top: 48%;
+}
+
+
+.wave-dot-two {
+  right: 20%;
+  top: 42%;
+}
+
+
+.wave-dot-three {
+  right: 16%;
+  bottom: 45%;
+}
+
+.projects-container {
+  position: relative;
+
+  z-index: 3;
+}
+
+.floating-tech {
+  z-index: 1;
+}
+
+@media (max-width: 1050px) {
+
+  .tech-object {
+    font-size: 42px;
+    opacity: 0.65;
+  }
+
+
+  .tech-react {
+    font-size: 58px;
+  }
+
+
+  .tech-three {
+    font-size: 54px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .tech-postgres,
+  .tech-github,
+  .tech-html,
+  .tech-css {
+    display: none;
+  }
+
+
+  .tech-react {
+    top: 10%;
+    left: 4%;
+
+    font-size: 45px;
+
+    opacity: 0.35;
+  }
+
+
+  .tech-three {
+    top: 18%;
+    right: 4%;
+
+    font-size: 42px;
+
+    opacity: 0.30;
+  }
+
+
+  .tech-node {
+    bottom: 12%;
+    left: 4%;
+
+    font-size: 38px;
+
+    opacity: 0.28;
+  }
+
+
+  .tech-js {
+    bottom: 10%;
+    right: 5%;
+
+    font-size: 32px;
+
+    opacity: 0.30;
+  }
+
+
+  .projects-wave-top,
+  .projects-wave-bottom {
+    height: 55px;
   }
 
 }
