@@ -30,7 +30,7 @@ const App = () => {
         isNight={isNight}
       />
 
-      <Footer />
+<Footer isNight={isNight} />
 
     </div>
   );

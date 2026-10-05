@@ -1,11 +1,11 @@
 import {
   FaGraduationCap,
   FaBriefcase,
-  FaLocationDot,
-  FaCode,
+  FaBullseye,
+  FaStar,
   FaTrophy,
-  FaRocket,
-  FaHeart,
+  FaAward,
+  FaMedal,
 } from "react-icons/fa6";
 
 import {
@@ -23,23 +23,13 @@ import "../styles/About.css";
 
 const About = ({ isNight }) => {
   return (
-    // <section
-    //   id="about"
-    //   className={`about ${isNight ? "about-night" : "about-day"}`}
-    // >
-
     <section
-        id="about"
-        className={`about ${isNight ? "night-mode" : "day-mode"}`}
+      id="about"
+      className={`about ${isNight ? "night-mode" : "day-mode"}`}
     >
-
-      {/* =========================
-          BACKGROUND DECORATION
-      ========================= */}
-
+      {/* BACKGROUND GLOW */}
       <div className="about-glow about-glow-one"></div>
       <div className="about-glow about-glow-two"></div>
-
 
       <div className="about-container">
 
@@ -48,7 +38,6 @@ const About = ({ isNight }) => {
         ========================= */}
 
         <div className="about-heading">
-
           <p className="section-label">
             <span></span>
             GET TO KNOW ME
@@ -58,7 +47,6 @@ const About = ({ isNight }) => {
           <h2>
             About <span>Me</span>
           </h2>
-
         </div>
 
 
@@ -68,96 +56,84 @@ const About = ({ isNight }) => {
 
         <div className="about-main">
 
-
           {/* =========================
               LEFT - IMAGE
           ========================= */}
 
           <div className="about-visual">
 
-            {/* Decorative rings */}
-
+            {/* Decorative Rings */}
             <div className="about-ring ring-one"></div>
             <div className="about-ring ring-two"></div>
             <div className="about-ring ring-three"></div>
 
-
             {/* Photo */}
-
             <div className="about-photo-frame">
-
               <img
                 src="/pavani-about.png"
                 alt="Pavani Gudupu"
               />
-
             </div>
 
-
             {/* Signature */}
-
             <div className="about-signature">
               Pavani
             </div>
 
+            {/* Career Interest Card */}
+              <div className="passion-card">
 
-            {/* Passion card */}
+                <span className="career-label">
+                  CAREER INTEREST
+                </span>
 
-            <div className="passion-card">
+                <strong>
+                  Interested in working
+                  <br />
+                  <b>in the Software Industry</b>
+                </strong>
 
-              <span>
-                Passionate about
-              </span>
-
-              <strong>
-                Turning Ideas into
-                <br />
-                <b>Digital Reality ✨</b>
-              </strong>
-
-            </div>
+              </div>
 
           </div>
 
 
-
           {/* =========================
-              RIGHT - CONTENT
+              RIGHT - INFORMATION
           ========================= */}
 
           <div className="about-info">
 
             <h3>
-              I'm Pavani, a passionate{" "}
-              <span>Software Developer.</span>
+              Hi, I'm Pavani, a{" "}
+              <span>Computer Science graduate</span>{" "}
+              interested in software development.
             </h3>
 
-
             <p>
-              I love building modern, responsive and user-friendly
-              web applications. I enjoy transforming ideas into
-              meaningful digital experiences.
+              I have one year of professional experience at Venx IT Solutions,
+              where I worked in application support and gained hands-on
+              experience with SQL Server, SSMS, software troubleshooting,
+              testing and customer support.
             </p>
 
             <p>
-              I'm constantly learning and exploring new technologies
-              to improve my skills and create solutions that make
-              a difference.
+              I'm currently looking for an opportunity in the software industry
+              where I can apply what I've learned, gain hands-on development
+              experience and continue learning new technologies.
             </p>
-
-
 
             {/* =========================
-                DETAILS + QUOTE
+                DETAILS + ACHIEVEMENT
             ========================= */}
 
             <div className="about-details-wrapper">
-
 
               {/* DETAILS */}
 
               <div className="about-details">
 
+                {/* EDUCATION */}
                 <div className="detail-item">
 
                   <div className="detail-icon">
@@ -166,14 +142,16 @@ const About = ({ isNight }) => {
 
                   <div>
                     <span>Education</span>
+
                     <p>
-                      B.Tech in Computer Science & Engineering
+                      B.Tech — Computer Science & Data Science
                     </p>
                   </div>
 
                 </div>
 
 
+                {/* EXPERIENCE */}
                 <div className="detail-item">
 
                   <div className="detail-icon">
@@ -182,117 +160,124 @@ const About = ({ isNight }) => {
 
                   <div>
                     <span>Experience</span>
+
                     <p>
-                      Building projects and real-world solutions
+                      1 Year — Venx IT Solutions
                     </p>
                   </div>
 
                 </div>
 
 
-                <div className="detail-item">
+                {/* CAREER FOCUS */}
+<div className="detail-item">
 
-                  <div className="detail-icon">
-                    <FaLocationDot />
-                  </div>
+  <div className="detail-icon">
+    <FaBullseye />
+  </div>
 
-                  <div>
-                    <span>Location</span>
-                    <p>
-                      Visakhapatnam, India
-                    </p>
-                  </div>
+  <div>
+    <span>Career Goal</span>
 
-                </div>
+    <p>
+      Gain hands-on experience & learn new technologies
+    </p>
+  </div>
+
+</div>
 
               </div>
 
 
+              {/* =========================
+                  ACHIEVEMENT CARD
+              ========================= */}
 
-              {/* QUOTE */}
+<div className="about-quote achievement-card">
 
-              {/* <div className="about-quote">
+  <div className="achievement-icon">
+    <FaMedal />
+  </div>
 
-                <div className="quote-mark">
-                  “
-                </div>
+  <span className="achievement-label">
+    RECOGNITION
+  </span>
 
-                <p>
-                  Code is not just what I write,
-                  <br />
-                  it's how I solve problems and
-                  <br />
-                  <span>create impact.</span>
-                </p>
+  <strong>
+    Star Performer
+  </strong>
 
-                <div className="quote-line"></div>
+  <p>
+    Venx IT Solutions
+    <br />
+    May 2026
+  </p>
 
-              </div> */}
+  <div className="achievement-stars">
+    <FaStar />
+    <FaStar />
+    <FaStar />
+  </div>
+
+</div>
 
             </div>
-
 
           </div>
 
         </div>
 
 
-
         {/* =========================
-            STATS
+            FACTS / ACHIEVEMENTS
         ========================= */}
 
         <div className="about-stats">
 
+          {/* EXPERIENCE */}
           <div className="stat-card">
-
-            <FaCode />
+            <FaBriefcase />
 
             <div>
-              <strong>10+</strong>
-              <span>Projects</span>
+              <strong>1 Year</strong>
+              <span>Professional Experience</span>
             </div>
-
           </div>
 
 
+          {/* STAR PERFORMER */}
           <div className="stat-card">
+            <FaStar />
 
+            <div>
+              <strong>Star Performer</strong>
+              <span>Venx IT Solutions</span>
+            </div>
+          </div>
+
+
+          {/* AVISHKARA */}
+          <div className="stat-card">
             <FaTrophy />
 
             <div>
-              <strong>2+</strong>
-              <span>Years Learning</span>
+              <strong>2nd Place</strong>
+              <span>Avishkara</span>
             </div>
-
           </div>
 
 
+          {/* CGPA */}
           <div className="stat-card">
-
-            <FaRocket />
+            <FaAward />
 
             <div>
-              <strong>100+</strong>
-              <span>Problems Solved</span>
+              <strong>8.35</strong>
+              <span>B.Tech CGPA</span>
             </div>
-
-          </div>
-
-
-          <div className="stat-card">
-
-            <FaHeart />
-
-            <div>
-              <strong>100%</strong>
-              <span>Dedication</span>
-            </div>
-
           </div>
 
         </div>
-
 
 
         {/* =========================
@@ -304,7 +289,6 @@ const About = ({ isNight }) => {
           <div className="tech-title">
             TECH STACK
           </div>
-
 
           <div className="tech-list">
 
@@ -353,7 +337,6 @@ const About = ({ isNight }) => {
         </div>
 
       </div>
-
     </section>
   );
 };

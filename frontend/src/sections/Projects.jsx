@@ -73,7 +73,7 @@ const Projects = ({ isNight }) => {
       <div className="projects-glow projects-glow-two"></div>
 
 {/* CURVED TOP DIVIDER */}
-
+{/*
 <div className="projects-wave projects-wave-top">
   <svg
     viewBox="0 0 1440 120"
@@ -92,6 +92,8 @@ const Projects = ({ isNight }) => {
   <span className="wave-dot wave-dot-one"></span>
 <span className="wave-dot wave-dot-two"></span>
 </div>
+
+*/}
 
 
 {/* FLOATING TECHNOLOGIES */}
@@ -290,7 +292,7 @@ const Projects = ({ isNight }) => {
       </div>
       {/* CURVED TOP DIVIDER */}
 
-<div className="projects-wave projects-wave-top">
+{/* <div className="projects-wave projects-wave-top">
   <svg
     viewBox="0 0 1440 120"
     preserveAspectRatio="none"
@@ -302,7 +304,7 @@ const Projects = ({ isNight }) => {
          C980,85 1170,5 1440,35"
     />
   </svg>
-</div>
+</div>  */}
 
 
 {/* FLOATING TECHNOLOGIES */}
@@ -344,7 +346,7 @@ const Projects = ({ isNight }) => {
 </div>
 
 {/* CURVED BOTTOM DIVIDER */}
-
+{/*
 <div className="projects-wave projects-wave-bottom">
   <svg
     viewBox="0 0 1440 120"
@@ -358,6 +360,8 @@ const Projects = ({ isNight }) => {
     />
   </svg>
 </div>
+
+*/}
 
     </section>
 

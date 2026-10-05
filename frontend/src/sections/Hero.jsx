@@ -1,14 +1,19 @@
 import Scene from "../components/Scene";
 import Navbar from "../components/Navbar";
-import { FaArrowRight } from "react-icons/fa6";
-import SocialLinks from "../components/SocialLinks";
+import {
+  FaArrowRight,
+  FaDownload,
+  FaChevronDown,
+} from "react-icons/fa6";
 
+import SocialLinks from "../components/SocialLinks";
 import "../styles/Hero.css";
 
-const Hero = ({ isNight, setIsNight }) => {  
-  return (
 
-    <section id="home" 
+const Hero = ({ isNight, setIsNight }) => {
+  return (
+    <section
+      id="home"
       className={`hero ${isNight ? "night-mode" : "day-mode"}`}
     >
 
@@ -18,8 +23,10 @@ const Hero = ({ isNight, setIsNight }) => {
         setIsNight={setIsNight}
       />
 
+
       {/* SOCIAL LINKS */}
       <SocialLinks />
+
 
       {/* HERO CONTENT */}
       <div className="hero-content">
@@ -41,24 +48,84 @@ const Hero = ({ isNight, setIsNight }) => {
           simple, useful and beautiful digital experiences.
         </p>
 
+
+        {/* HERO BUTTONS */}
         <div className="hero-buttons">
 
-          <button className="btn-one">
+          {/* VIEW PROJECTS */}
+          <button
+            className="btn-one"
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                });
+            }}
+          >
             View Projects <FaArrowRight />
           </button>
 
-          <button>
+
+          {/* CONTACT */}
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                });
+            }}
+          >
             Contact Me
           </button>
+
+
+          {/* DOWNLOAD CV */}
+          <a
+            href="/Pavani_Gudupu_Resume.pdf"
+            download
+            className="cv-button"
+          >
+            <FaDownload />
+            Download CV
+          </a>
 
         </div>
 
       </div>
 
+
       {/* 3D ISLAND */}
       <div className="hero-3d">
-        <Scene />
+        <Scene isNight={isNight} />
       </div>
+
+
+      {/* SCROLL INDICATOR */}
+      <button
+        className="hero-scroll"
+        onClick={() => {
+          document
+            .getElementById("about")
+            ?.scrollIntoView({
+              behavior: "smooth",
+            });
+        }}
+        aria-label="Scroll to About section"
+      >
+
+        <span className="scroll-mouse">
+          <span className="scroll-wheel"></span>
+        </span>
+
+        <span className="scroll-text">
+          Scroll
+        </span>
+
+        <FaChevronDown className="scroll-arrow" />
+
+      </button>
 
     </section>
   );

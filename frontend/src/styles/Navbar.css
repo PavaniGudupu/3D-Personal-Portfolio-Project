@@ -335,6 +335,74 @@
 
 }
 
+/* =========================
+   NAV LINK HOVER EFFECT
+========================= */
+
+.nav-link{
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  padding: 8px 0;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* underline */
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+
+/* hover */
+.nav-link:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* underline grows from center */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ACTIVE PAGE */
+.nav-link.active-link {
+  color: #ffffff;
+}
+
+
+/* active underline always visible */
+.nav-link.active-link::after {
+  width: 100%;
+}
 
 
 

@@ -1,75 +1,3 @@
-// import { Suspense } from "react";
-// import { Canvas, useThree } from "@react-three/fiber";
-// import {
-//   PerspectiveCamera,
-//   Center,
-// } from "@react-three/drei";
-
-// import FloatingIsland from "./FloatingIsland";
-
-
-// const ResponsiveIsland = () => {
-
-//   const { viewport } = useThree();
-
-//   // Change this number if we need to make
-//   // the island slightly bigger or smaller.
-//   const scale = Math.min(
-//     viewport.width * 0.06,
-//     viewport.height * 0.06
-//   );
-
-//   return (
-//     <Center>
-//       <FloatingIsland
-//         scale={scale}
-//       />
-//     </Center>
-//   );
-// };
-
-
-// const Scene = () => {
-
-//   return (
-
-//     <Canvas
-//       gl={{
-//         alpha: true,
-//         antialias: true,
-//       }}
-//       style={{
-//         width: "100%",
-//         height: "100%",
-//       }}
-//     >
-
-//       <PerspectiveCamera
-//         makeDefault
-//         position={[0, 0, 10]}
-//         fov={45}
-//       />
-
-//       <ambientLight intensity={2} />
-
-//       <directionalLight
-//         position={[10, 10, 10]}
-//         intensity={3}
-//       />
-
-//       <Suspense fallback={null}>
-
-//         <ResponsiveIsland />
-
-//       </Suspense>
-
-//     </Canvas>
-
-//   );
-// };
-
-
-// export default Scene;
 
 
 import { Suspense, useRef, useEffect } from "react";
@@ -80,6 +8,7 @@ import {
 } from "@react-three/drei";
 
 import FloatingIsland from "./FloatingIsland";
+import ModelLoader from "./ModelLoader";
 
 
 const ResponsiveIsland = () => {
@@ -189,10 +118,8 @@ useFrame((state) => {
 };
 
 
-const Scene = () => {
-
+const Scene = ({ isNight }) => {
   return (
-
     <Canvas
       gl={{
         alpha: true,
@@ -203,30 +130,77 @@ const Scene = () => {
         height: "100%",
       }}
     >
-
       <PerspectiveCamera
         makeDefault
         position={[0, 0, 10]}
         fov={45}
       />
 
-      <ambientLight intensity={2} />
+      {/* =========================
+          DAY LIGHTING
+      ========================= */}
 
-      <directionalLight
-        position={[10, 10, 10]}
-        intensity={3}
-      />
+      {!isNight && (
+        <>
+          <ambientLight
+            intensity={2}
+            color="#ffffff"
+          />
 
-      <Suspense fallback={null}>
+          <directionalLight
+            position={[10, 10, 10]}
+            intensity={3}
+            color="#ffffff"
+          />
+        </>
+      )}
 
+
+{/* =========================
+    NIGHT LIGHTING #71849d
+========================= */}
+
+{isNight && (
+  <>
+    {/* Soft overall night illumination */}
+    <ambientLight
+      intensity={1.15}
+      color="#65717f"
+    />
+
+    {/* Main moonlight */}
+    <directionalLight
+      position={[-10, 12, 8]}
+      intensity={1.8}
+      color="#71849d"
+    />
+
+    {/* Neutral front fill - keeps details visible */}
+    <directionalLight
+      position={[3, 2, 10]}
+      intensity={0.8}
+      color="#d8e1eb"
+    />
+
+    {/* Blue rim/highlight */}
+    <pointLight
+      position={[5, 5, 3]}
+      intensity={0.55}
+      color="#91b5e4"
+      distance={20}
+    />
+  </>
+)}
+
+
+
+
+      <Suspense fallback={<ModelLoader />}>
         <ResponsiveIsland />
-
       </Suspense>
 
     </Canvas>
-
   );
 };
-
 
 export default Scene;

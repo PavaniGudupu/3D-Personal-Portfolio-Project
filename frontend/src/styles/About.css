@@ -38,7 +38,7 @@
 }
 
 
-/* DAY */
+/* DAY
 
 .about.day-mode {
   background-image: url("/about-day-background.png");
@@ -48,8 +48,46 @@
 
 /* NIGHT */
 
-.about.night-mode {
+/*.about.night-mode {
   background-image: url("/about-night-background.png");
+  color: #ffffff;
+} */
+
+
+/* =========================
+   DAY THEME
+========================= */
+
+.about.day-mode {
+  background-image:
+    radial-gradient(
+      circle at 25% 35%,
+      rgba(73, 158, 255, 0.08),
+      transparent 35%
+    ),
+    url("/about-day-background.png");
+
+  color: #102542;
+}
+
+
+/* =========================
+   NIGHT THEME
+========================= */
+
+.about.night-mode {
+  background-image:
+    linear-gradient(
+      rgb(2, 11, 28),
+      rgba(2, 10, 24, 0.986)
+    ),
+    radial-gradient(
+      circle at 10% 30%,
+      rgba(25, 110, 220, 0.12),
+      transparent 35%
+    ),
+    url("/about-night-background.png");
+
   color: #ffffff;
 }
 
@@ -70,33 +108,25 @@
    DAY THEME
 ===================================================== */
 
-.about-day {
-  background:
+/* .about.day-mode {
+  background:  #eef8ff,
     radial-gradient(
-      circle at 10% 30%,
-      rgba(73, 155, 255, 0.18),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 90% 70%,
-      rgba(90, 170, 255, 0.15),
+      circle at 25% 35%,
+      rgba(73, 158, 255, 0.10),
       transparent 35%
     ),
     linear-gradient(
       135deg,
-      #eef8ff,
-      #dceeff 45%,
-      #f8fcff
+      #f4faff 0%,
+      #e8f5ff 50%,
+      #f7fbff 100%
     );
-
-  color: #102542;
-}
-
+} */
 
 /* =====================================================
    NIGHT THEME
 ===================================================== */
-
+/* 
 .about-night {
   background:
     radial-gradient(
@@ -117,8 +147,35 @@
     );
 
   color: #ffffff;
+} */
+
+/* =========================
+   NIGHT TEXT
+========================= */
+
+.about.night-mode .about-heading h2,
+.about.night-mode .about-info h3 {
+  color: #ffffff;
 }
 
+.about.night-mode .about-info > p {
+  color: rgba(230, 240, 255, 0.88);
+  opacity: 1;
+}
+
+.about.night-mode .detail-item p {
+  color: rgba(225, 237, 255, 0.82);
+  opacity: 1;
+}
+
+.about.night-mode .stat-card span {
+  color: rgba(225, 237, 255, 0.78);
+  opacity: 1;
+}
+
+.about.night-mode .tech-item span {
+  color: rgba(235, 243, 255, 0.88);
+}
 
 /* =====================================================
    BACKGROUND GLOW
@@ -327,7 +384,7 @@
 .about-signature {
   position: absolute;
 
-  left: 3%;
+  left: -5%;
   bottom: 115px;
 
   font-family: cursive;
@@ -411,6 +468,11 @@
 
   font-weight: 700;
 }
+
+
+
+
+
 
 
 /* =====================================================
@@ -589,6 +651,29 @@
 
   background: #258cf0;
 }
+
+
+/* =====================================================
+   CAREER INTEREST
+===================================================== */
+
+.career-label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #167ee6 !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  opacity: 1 !important;
+}
+
+.night-mode .career-label {
+  color: #69b7ff !important;
+}
+
+
 
 
 /* =====================================================
@@ -1023,4 +1108,91 @@
     grid-template-columns: 1fr 1fr;
   }
 
+}
+
+
+
+
+
+
+
+/* =====================================================
+   ACHIEVEMENT CARD
+===================================================== */
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.achievement-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  color: #258cf0;
+  background: rgba(37, 140, 240, 0.1);
+
+  font-size: 18px;
+}
+
+.achievement-label {
+  margin-bottom: 7px;
+
+  color: #218cf2;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.achievement-card strong {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.achievement-card p {
+  margin: 7px 0 14px;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  opacity: 0.75;
+}
+
+
+.achievement-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  color: #1688f5;
+  background: rgba(22, 136, 245, 0.12);
+
+  font-size: 21px;
+}
+
+.achievement-stars {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+
+  color: #f5b82e;
+  font-size: 12px;
 }

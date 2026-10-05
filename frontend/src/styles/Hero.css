@@ -4,6 +4,16 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+
+    /* Firefox */
+  scrollbar-width: none;
+}
+
+/* Chrome, Edge, Safari */
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -24,6 +34,16 @@ body {
 /* =========================
    HERO
 ========================= */
+.hero.night-mode::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 10, 30, 0.12);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
 
 /* =========================
    DAY MODE
@@ -41,6 +61,7 @@ body {
 .hero.night-mode {
   background-image: url("/night-background.png");
 }
+
 
 
 .hero {
@@ -62,6 +83,8 @@ body {
 }
 
 
+
+
 /* .hero {
   width: 100%;
   min-height: 100vh;
@@ -78,6 +101,176 @@ body {
 
   position: relative;
 } */
+
+
+
+/* =========================
+   HERO TEXT - DAY MODE
+========================= */
+
+.hero.day-mode .hero-small-text {
+  color: #16324f;
+}
+
+.hero.day-mode .hero-content h1 {
+  color: #102542;
+}
+
+.hero.day-mode .hero-content h1 span {
+  color: #0d72d9;
+}
+
+.hero.day-mode .hero-content h2 {
+  color: #16324f;
+}
+
+.hero.day-mode .hero-description {
+  color: #294967;
+}
+
+
+/* =========================
+   HERO TEXT - NIGHT MODE
+========================= */
+
+.hero.night-mode .hero-small-text {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero.night-mode .hero-content h1 {
+  color: #ffffff;
+}
+
+.hero.night-mode .hero-content h1 span {
+  color: #3fa7ff;
+}
+
+.hero.night-mode .hero-content h2 {
+  color: #ffffff;
+}
+
+.hero.night-mode .hero-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.hero-content h1 {
+  color: #ffffff;
+}
+
+.hero-content h1 span {
+  color: hsl(204, 100%, 17%);
+}
+
+.hero-content h2 {
+  color: #ffffff;
+}
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero.day-mode .hero-buttons button:not(.btn-one) {
+  background: rgba(255, 255, 255, 0.45);
+
+  color: #16324f;
+
+  border: 1px solid rgba(16, 60, 105, 0.45);
+
+  backdrop-filter: blur(8px);
+}
+
+.hero.day-mode .hero-buttons button:not(.btn-one):hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero.night-mode .hero-buttons button:not(.btn-one) {
+  color: #ffffff;
+
+  background: rgba(4, 20, 45, 0.35);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* DAY */
+
+.day-mode .navbar-logo,
+.day-mode .nav-link {
+  color: #102542;
+}
+
+.day-mode .active-link {
+  color: #0d72d9;
+}
+
+.day-mode .active-link::after {
+  background: #0d72d9;
+}
+
+
+/* NIGHT */
+
+.night-mode .navbar-logo,
+.night-mode .nav-link {
+  color: #ffffff;
+}
+
+.night-mode .active-link {
+  color: #69b9ff;
+}
+
+.night-mode .active-link::after {
+  background: #69b9ff;
+}
+
+/* DAY */
+
+.day-mode .social-links a {
+  color: #123a60;
+}
+
+.day-mode .social-line {
+  background: rgba(18, 58, 96, 0.5);
+}
+
+
+/* NIGHT */
+
+.night-mode .social-links a {
+  color: #ffffff;
+}
+
+.night-mode .social-line {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.day-mode .social-links a {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.night-mode .social-links a {
+  background: rgba(0, 15, 40, 0.2);
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
 
 /* =========================
    LEFT CONTENT
@@ -112,7 +305,7 @@ body {
 /* PAVANI BLUE COLOR */
 
 .hero-content h1 span {
-  color: #f9eeff;
+  color: hsl(204, 100%, 17%);
   font-weight: 700;
 }
 
@@ -360,6 +553,14 @@ body {
 
 @media (max-width: 768px) {
 
+  .hero.day-mode .hero-content h1 span {
+    color: #0d72d9;
+  }
+
+  .hero.night-mode .hero-content h1 span {
+    color: #3fa7ff;
+  }
+
   .hero {
     min-height: 100vh;
 
@@ -368,6 +569,10 @@ body {
     justify-content: center;
 
     align-items: center;
+  }
+
+   .hero-content h1 span {
+    color: #102542;
   }
 
   /* =========================
@@ -602,5 +807,428 @@ body {
     padding: 12px 15px;
 
     font-size: 14px;
+  }
+}
+
+
+
+
+
+/* =========================
+   3D MODEL LOADER
+========================= */
+
+.model-loader {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.model-loader-spinner {
+  width: 38px;
+  height: 38px;
+
+  border: 3px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-top-color: #3fa7ff;
+
+  border-radius: 50%;
+
+  animation:
+    modelLoading 0.8s linear infinite;
+}
+
+
+@keyframes modelLoading {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+
+
+
+/* =====================================================
+   DOWNLOAD CV
+===================================================== */
+
+.cv-button {
+  min-width: 150px;
+  padding: 14px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border-radius: 8px;
+
+  color: #0d5fc9;
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(13, 95, 201, 0.35);
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cv-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 8px 22px rgba(13, 95, 201, 0.18);
+}
+
+.cv-button svg {
+  font-size: 14px;
+}
+
+
+/* NIGHT */
+
+.hero.night-mode .cv-button {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero.night-mode .cv-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 8px 25px rgba(72, 157, 255, 0.18);
+}
+
+
+/* =====================================================
+   HERO SCROLL INDICATOR
+===================================================== */
+/* =====================================================
+   HERO SCROLL INDICATOR
+===================================================== */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 8px 14px;
+
+  border: none;
+  background: transparent;
+
+  /* WHITE IN BOTH DAY + NIGHT */
+  color: #ffffff;
+
+  cursor: pointer;
+
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+
+  animation: scrollFloat 2s ease-in-out infinite;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+
+/* HOVER */
+
+.hero-scroll:hover {
+  animation-play-state: paused;
+
+  transform:
+    translateX(-50%)
+    translateY(-5px)
+    scale(1.08);
+
+  filter:
+    drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+}
+
+
+/* =====================================================
+   MOUSE
+===================================================== */
+
+.scroll-mouse {
+  position: relative;
+
+  width: 30px;
+  height: 46px;
+
+  border: 2.5px solid #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.35),
+    inset 0 0 5px rgba(255, 255, 255, 0.12);
+}
+
+
+/* =====================================================
+   MOVING WHEEL
+===================================================== */
+
+.scroll-wheel {
+  position: absolute;
+
+  top: 7px;
+  left: 50%;
+
+  width: 4px;
+  height: 8px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transform: translateX(-50%);
+
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+
+  animation: scrollWheel 1.6s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.scroll-text {
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.scroll-arrow {
+  color: #ffffff;
+
+  font-size: 16px;
+
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+
+  animation: scrollArrow 1.4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   DAY + NIGHT
+   Keep indicator white in both themes
+===================================================== */
+
+.hero.day-mode .hero-scroll,
+.hero.night-mode .hero-scroll {
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes scrollFloat {
+
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(-6px);
+  }
+}
+
+
+@keyframes scrollWheel {
+
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 17px);
+    opacity: 0;
+  }
+}
+
+
+@keyframes scrollArrow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .hero-scroll {
+    bottom: 14px;
+    gap: 4px;
+  }
+
+  .scroll-mouse {
+    width: 27px;
+    height: 41px;
+  }
+
+  .scroll-text {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .scroll-arrow {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .hero-scroll {
+    bottom: 10px;
+  }
+
+  .scroll-mouse {
+    width: 25px;
+    height: 38px;
+  }
+
+  .scroll-text {
+    display: none;
+  }
+
+  .scroll-arrow {
+    font-size: 13px;
+  }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-scroll,
+  .scroll-wheel,
+  .scroll-arrow {
+    animation: none;
+  }
+}
+/* ---------------------------------
+
+Mobile adjustment 
+
+---------------------------------*/
+
+@media (max-width: 768px) {
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-buttons button,
+  .cv-button {
+    min-width: 140px;
+  }
+
+  .hero-scroll {
+    bottom: 12px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .cv-button {
+    width: 100%;
+    max-width: 292px;
+  }
+
+  .hero-scroll {
+    bottom: 8px;
+  }
+
+  .scroll-text {
+    display: none;
   }
 }

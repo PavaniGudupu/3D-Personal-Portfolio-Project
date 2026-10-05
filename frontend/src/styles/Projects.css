@@ -49,63 +49,49 @@
   }
 }
 
-
 /* =====================================================
    DAY / NIGHT BACKGROUND
 ===================================================== */
 
 /* .projects.day-mode {
-
   background-image:
     linear-gradient(
-      rgba(240, 249, 255, 0.747),
-      rgba(232, 244, 255, 0.88)
+      rgba(238, 246, 255, 0.72),
+      rgba(237, 245, 255, 0.78)
     ),
     url("/projects-day-background.png");
 
-  color: #102542;
-
-} */
-
-
-/* .projects.day-mode {
-
-  background-image:
-    linear-gradient(
-        rgb(190, 221, 255),
-rgba(229, 221, 247, 0.733)
-
-),
-    url("/projects-day-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   color: #102542;
-
 }
 
-.projects.night-mode {
 
+.projects.night-mode {
   background-image:
     linear-gradient(
-      rgb(0, 28, 54),
-      rgba(25, 0, 83, 0.63)
+      rgba(7, 26, 47, 0.78),
+      rgba(4, 17, 31, 0.82)
     ),
     url("/projects-day-background.png");
 
-  color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  color: #f5f9ff;
 } */
 
 
 .projects.day-mode {
-  background:
-    linear-gradient(
-      180deg,
-      #eef6ff 0%,
-      #f5f9ff 50%,
-      #edf5ff 100%
-    );
-
-  color: #102542;
+  background: linear-gradient(
+    180deg,
+    #f4faff 0%,
+    #edf7ff 50%,
+    #f7fbff 100%
+  );
 }
 
 
@@ -113,9 +99,9 @@ rgba(229, 221, 247, 0.733)
   background:
     linear-gradient(
       180deg,
-      #071a2f 0%,
-      #061526 55%,
-      #04111f 100%
+      #08192c 0%,
+      #061323 55%,
+      #04101d 100%
     );
 
   color: #f5f9ff;
@@ -1025,11 +1011,48 @@ rgba(229, 221, 247, 0.733)
 
 }
 
+
+
+
+
+/* =====================================================
+   3D - Experience
+===================================================== */
+
+.projects-grid {
+  perspective: 1400px;
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.project-card:hover {
+  transform:
+    translateY(-10px)
+    translateZ(35px)
+    rotateX(2deg);
+}
+
+.project-card h3,
+.project-card p,
+.project-card .project-tags {
+  transform: translateZ(20px);
+}
+
+
+
+
+
+
 /* =====================================================
    SECTION CURVES
 ===================================================== */
 
-.projects-wave {
+/* .projects-wave {
   position: absolute;
 
   left: 0;
@@ -1057,19 +1080,19 @@ rgba(229, 221, 247, 0.733)
 
   stroke-width: 2;
 }
-
+*/
 
 /* TOP */
 
-.projects-wave-top {
+/* .projects-wave-top {
   top: -3px;
 
   height: 85px;
-}
+} */
 
 
 /* BOTTOM */
-
+/* 
 .projects-wave-bottom {
   bottom: -3px;
 
@@ -1122,8 +1145,8 @@ rgba(229, 221, 247, 0.733)
 
 .floating-tech {
   z-index: 1;
-}
-
+} */
+/* 
 @media (max-width: 1050px) {
 
   .tech-object {
@@ -1198,4 +1221,7 @@ rgba(229, 221, 247, 0.733)
     height: 55px;
   }
 
-}
+} */ 
+
+
+
