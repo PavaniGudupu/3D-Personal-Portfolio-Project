@@ -406,179 +406,65 @@
 
 
 
-/* ------------
+/* =========================================
+   MOBILE MENU - DAY / NIGHT VISIBILITY FIX
+========================================= */
 
-New nav bar css.
+@media (max-width: 768px) {
 
+  /* Keep opened mobile menu dark in BOTH themes */
+  .day-mode .nav-links,
+  .night-mode .nav-links {
+    background: rgba(5, 25, 50, 0.96);
 
-.navbar {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  height: 85px;
-
-  padding: 0 3%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  z-index: 10;
-}
-
-
-
-
-.navbar-logo {
-  font-size: 24px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  color: #ffffff;
-}
-
-
-
-.navbar-links {
-  display: flex;
-
-  align-items: center;
-
-  gap: 42px;
-}
-
-
-.navbar-links a {
-  position: relative;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  font-weight: 500;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  transition: color 0.25s ease;
-}
-
-
-.navbar-links a:hover {
-  color: #ffffff;
-}
-
-
-
-.navbar-links a.active::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: -10px;
-
-  transform: translateX(-50%);
-
-  width: 38px;
-
-  height: 2px;
-
-  background: #ffffff;
-
-  border-radius: 10px;
-}
-
-
-
-.theme-toggle {
-  width: 76px;
-
-  height: 38px;
-
-  border: none;
-
-  border-radius: 30px;
-
-  cursor: pointer;
-
-  font-size: 18px;
-
-  background: rgba(255, 255, 255, 0.85);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  transition: transform 0.25s ease;
-}
-
-
-.theme-toggle:hover {
-  transform: scale(1.05);
-}
-
-
-
-
-@media (max-width: 1100px) {
-
-  .navbar {
-    padding: 0 5%;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
-  .navbar-links {
-    gap: 25px;
+
+  /* Force menu links to stay visible */
+  .day-mode .nav-links .nav-link,
+  .night-mode .nav-links .nav-link {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+
+  /* Active link */
+  .day-mode .nav-links .nav-link.active-link,
+  .night-mode .nav-links .nav-link.active-link {
+    color: #2196ff;
+  }
+
+
+  /* Active underline */
+  .day-mode .nav-links .nav-link.active-link::after,
+  .night-mode .nav-links .nav-link.active-link::after {
+    background: #2196ff;
+  }
+
+
+  /* Hover */
+  .day-mode .nav-links .nav-link:hover,
+  .night-mode .nav-links .nav-link:hover {
+    color: #ffffff;
+  }
+
+
+  .day-mode .nav-links .nav-link:hover::after,
+  .night-mode .nav-links .nav-link:hover::after {
+    background: #ffffff;
   }
 }
-
-
 
 
 @media (max-width: 768px) {
 
-  .navbar {
-    height: 70px;
-
-    padding: 0 20px;
+  .day-mode .menu-button {
+    color: #0b2948;
   }
 
-
-  .navbar-logo {
-    font-size: 20px;
+  .night-mode .menu-button {
+    color: #ffffff;
   }
 
-
-  .navbar-links {
-    display: none;
-  }
-
-
-  .theme-toggle {
-    width: 55px;
-
-    height: 32px;
-
-    font-size: 15px;
-  }
 }
-
------ */
-
-
-
-
-
-
-
-
-

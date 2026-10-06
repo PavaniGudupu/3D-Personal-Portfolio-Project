@@ -1232,3 +1232,71 @@ Mobile adjustment
     display: none;
   }
 }
+
+
+
+/* =========================================
+   HERO 3D SPATIAL MOTION
+========================================= */
+
+.hero {
+  perspective: 1400px;
+}
+
+
+.hero-content {
+  --hero-x: 0px;
+  --hero-y: 0px;
+
+  transform:
+    translate3d(
+      var(--hero-x),
+      var(--hero-y),
+      0
+    );
+
+  transition: transform 0.12s ease-out;
+
+  will-change: transform;
+}
+
+
+/* Give individual hero elements
+   slightly different depth */
+
+.hero-small-text {
+  transform: translateZ(5px);
+}
+
+.hero-content h1 {
+  transform: translateZ(25px);
+}
+
+.hero-content h2 {
+  transform: translateZ(18px);
+}
+
+.hero-description {
+  transform: translateZ(10px);
+}
+
+.hero-buttons {
+  transform: translateZ(22px);
+}
+
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    transform: none;
+  }
+
+  .hero-small-text,
+  .hero-content h1,
+  .hero-content h2,
+  .hero-description,
+  .hero-buttons {
+    transform: none;
+  }
+
+}

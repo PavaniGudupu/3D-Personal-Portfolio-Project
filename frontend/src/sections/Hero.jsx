@@ -8,9 +8,52 @@ import {
 
 import SocialLinks from "../components/SocialLinks";
 import "../styles/Hero.css";
-
+import { useEffect, useRef } from "react";
+import usePointer3D from "../hooks/usePointer3D";
 
 const Hero = ({ isNight, setIsNight }) => {
+
+  const heroContentRef = useRef(null);
+const pointer = usePointer3D();
+
+useEffect(() => {
+
+  let animationFrame;
+
+  const animate = () => {
+
+    if (heroContentRef.current) {
+
+      const x =
+        pointer.current.x * -5;
+
+      const y =
+        pointer.current.y * -3;
+
+      heroContentRef.current.style.setProperty(
+        "--hero-x",
+        `${x}px`
+      );
+
+      heroContentRef.current.style.setProperty(
+        "--hero-y",
+        `${y}px`
+      );
+
+    }
+
+    animationFrame =
+      requestAnimationFrame(animate);
+
+  };
+
+  animate();
+
+  return () =>
+    cancelAnimationFrame(animationFrame);
+
+}, [pointer]);
+
   return (
     <section
       id="home"
@@ -29,7 +72,10 @@ const Hero = ({ isNight, setIsNight }) => {
 
 
       {/* HERO CONTENT */}
-      <div className="hero-content">
+      <div
+        ref={heroContentRef}
+        className="hero-content"
+      >
 
         <p className="hero-small-text">
           Hello, I'm
