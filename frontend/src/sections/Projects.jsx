@@ -16,8 +16,8 @@ import {
 import {
   FaArrowUpRightFromSquare,
   FaGithub,
-} 
-from "react-icons/fa6";
+}
+  from "react-icons/fa6";
 
 import "../styles/Projects.css";
 
@@ -30,8 +30,9 @@ const projects = [
     description:
       "A responsive inventory management application designed to manage products, categories and data efficiently.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
-    github: "https://github.com/PavaniGudupu/React-Inventory-ProductList",
-    live: "https://stateful-ui-search-page-persistence.vercel.app/",
+    github:
+      "https://github.com/PavaniGudupu/React-Inventory-ProductList",
+    live: null,
   },
 
   {
@@ -41,8 +42,9 @@ const projects = [
     description:
       "A modern platform concept focused on simplifying application development through a clean and user-friendly experience.",
     tech: ["React", "JavaScript", "Node.js"],
-    github: "https://github.com/PavaniGudupu/CodeLess-Studio-Web",
-    // live: "#",
+    github:
+      "https://github.com/PavaniGudupu/CodeLess-Studio-Web",
+    live: null,
   },
 
   {
@@ -50,12 +52,14 @@ const projects = [
     title: "Personal Portfolio",
     category: "Creative Development",
     description:
-      "A responsive personal portfolio combining modern UI design, interactive experiences and a 3D visual environment.",
+      "A 3D interactive personal portfolio combining modern UI design, responsive experiences and a 3D visual environment.",
     tech: ["React", "Three.js", "CSS"],
-    github: "#",
-    live: "#",
+    github:
+      "https://github.com/PavaniGudupu/3D-Personal-Portfolio-Project",
+    live: "https://greenyellow-jaguar-739737.hostingersite.com/",
   },
 ];
+
 
 
 const Projects = ({ isNight }) => {
@@ -72,67 +76,46 @@ const Projects = ({ isNight }) => {
       <div className="projects-glow projects-glow-one"></div>
       <div className="projects-glow projects-glow-two"></div>
 
-{/* CURVED TOP DIVIDER */}
-{/*
-<div className="projects-wave projects-wave-top">
-  <svg
-    viewBox="0 0 1440 120"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-
-    <path
-      d="M0,35
-         C240,100 430,0 720,45
-         C980,85 1170,5 1440,35"
-    />
-    <span className="wave-dot wave-dot-three"></span>
-  </svg>
-
-  <span className="wave-dot wave-dot-one"></span>
-<span className="wave-dot wave-dot-two"></span>
-</div>
-
-*/}
 
 
-{/* FLOATING TECHNOLOGIES */}
 
-<div className="floating-tech" aria-hidden="true">
+      {/* FLOATING TECHNOLOGIES */}
 
-  <div className="tech-object tech-react">
-    <FaReact />
-  </div>
+      <div className="floating-tech" aria-hidden="true">
 
-  <div className="tech-object tech-node">
-    <FaNodeJs />
-  </div>
+        <div className="tech-object tech-react">
+          <FaReact />
+        </div>
 
-  <div className="tech-object tech-postgres">
-    <SiPostgresql />
-  </div>
+        <div className="tech-object tech-node">
+          <FaNodeJs />
+        </div>
 
-  <div className="tech-object tech-github">
-    <FaGithub />
-  </div>
+        <div className="tech-object tech-postgres">
+          <SiPostgresql />
+        </div>
 
-  <div className="tech-object tech-three">
-    <SiThreedotjs />
-  </div>
+        <div className="tech-object tech-github">
+          <FaGithub />
+        </div>
 
-  <div className="tech-object tech-js">
-    <SiJavascript />
-  </div>
+        <div className="tech-object tech-three">
+          <SiThreedotjs />
+        </div>
 
-  <div className="tech-object tech-html">
-    <FaHtml5 />
-  </div>
+        <div className="tech-object tech-js">
+          <SiJavascript />
+        </div>
 
-  <div className="tech-object tech-css">
-    <FaCss3Alt />
-  </div>
+        <div className="tech-object tech-html">
+          <FaHtml5 />
+        </div>
 
-</div>
+        <div className="tech-object tech-css">
+          <FaCss3Alt />
+        </div>
+
+      </div>
 
 
       <div className="projects-container">
@@ -242,26 +225,36 @@ const Projects = ({ isNight }) => {
 
                 {/* CARD FOOTER */}
 
-                <div className="project-card-footer">
+                    {/* CARD FOOTER */}
 
-                  <a
-                    href={project.github}
-                    aria-label={`${project.title} GitHub`}
-                  >
-                    <FaGithub />
-                    <span>Code</span>
-                  </a>
+                    <div className="project-card-footer">
 
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} GitHub`}
+                        >
+                          <FaGithub />
+                          <span>Code</span>
+                        </a>
+                      )}
 
-                  <a
-                    href={project.live}
-                    aria-label={`${project.title} live demo`}
-                  >
-                    <span>Live Demo</span>
-                    <FaArrowUpRightFromSquare />
-                  </a>
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} live demo`}
+                        >
+                          <span>Live Demo</span>
+                          <FaArrowUpRightFromSquare />
+                        </a>
+                      )}
 
-                </div>
+                    </div>
+
 
               </article>
 
@@ -290,78 +283,48 @@ const Projects = ({ isNight }) => {
 
 
       </div>
-      {/* CURVED TOP DIVIDER */}
-
-{/* <div className="projects-wave projects-wave-top">
-  <svg
-    viewBox="0 0 1440 120"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M0,35
-         C240,100 430,0 720,45
-         C980,85 1170,5 1440,35"
-    />
-  </svg>
-</div>  */}
 
 
-{/* FLOATING TECHNOLOGIES */}
 
-<div className="floating-tech" aria-hidden="true">
+      {/* FLOATING TECHNOLOGIES */}
 
-  <div className="tech-object tech-react">
-    <FaReact />
-  </div>
+      <div className="floating-tech" aria-hidden="true">
 
-  <div className="tech-object tech-node">
-    <FaNodeJs />
-  </div>
+        <div className="tech-object tech-react">
+          <FaReact />
+        </div>
 
-  <div className="tech-object tech-postgres">
-    <SiPostgresql />
-  </div>
+        <div className="tech-object tech-node">
+          <FaNodeJs />
+        </div>
 
-  <div className="tech-object tech-github">
-    <FaGithub />
-  </div>
+        <div className="tech-object tech-postgres">
+          <SiPostgresql />
+        </div>
 
-  <div className="tech-object tech-three">
-    <SiThreedotjs />
-  </div>
+        <div className="tech-object tech-github">
+          <FaGithub />
+        </div>
 
-  <div className="tech-object tech-js">
-    <SiJavascript />
-  </div>
+        <div className="tech-object tech-three">
+          <SiThreedotjs />
+        </div>
 
-  <div className="tech-object tech-html">
-    <FaHtml5 />
-  </div>
+        <div className="tech-object tech-js">
+          <SiJavascript />
+        </div>
 
-  <div className="tech-object tech-css">
-    <FaCss3Alt />
-  </div>
+        <div className="tech-object tech-html">
+          <FaHtml5 />
+        </div>
 
-</div>
+        <div className="tech-object tech-css">
+          <FaCss3Alt />
+        </div>
 
-{/* CURVED BOTTOM DIVIDER */}
-{/*
-<div className="projects-wave projects-wave-bottom">
-  <svg
-    viewBox="0 0 1440 120"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M0,80
-         C250,115 430,15 720,65
-         C980,110 1190,30 1440,60"
-    />
-  </svg>
-</div>
+      </div>
 
-*/}
+
 
     </section>
 
