@@ -1,0 +1,46 @@
+/* =========================================
+   SHARED 3D EXPERIENCE
+========================================= */
+
+.tilt-3d {
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.18s ease-out;
+
+  will-change: transform;
+}
+
+
+/* Elements placed inside a 3D container
+   can use this class to appear closer */
+
+.depth-front {
+  transform: translateZ(30px);
+}
+
+
+/* Medium depth */
+
+.depth-middle {
+  transform: translateZ(15px);
+}
+
+
+/* Background depth */
+
+.depth-back {
+  transform: translateZ(-10px);
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tilt-3d {
+    transform: none !important;
+    transition: none;
+  }
+
+}

@@ -1,54 +1,49 @@
 import {
   FaGraduationCap,
   FaBriefcase,
-  FaLocationDot,
-  FaCode,
+  FaBullseye,
+  FaStar,
   FaTrophy,
-  FaRocket,
-  FaHeart,
+  FaAward,
+  FaMedal,
 } from "react-icons/fa6";
 
 import {
-  FaHtml5,
-  FaCss3Alt,
   FaJsSquare,
   FaReact,
   FaNodeJs,
   FaGitAlt,
 } from "react-icons/fa";
 
-import { SiExpress, SiMysql } from "react-icons/si";
+
+import {
+  SiExpress,
+  SiPostgresql,
+  SiPostman,
+} from "react-icons/si";
+import { SiThreedotjs } from "react-icons/si";
+
+import { FaDatabase, FaCode } from "react-icons/fa";
+
 
 import "../styles/About.css";
 
 const About = ({ isNight }) => {
   return (
-    // <section
-    //   id="about"
-    //   className={`about ${isNight ? "about-night" : "about-day"}`}
-    // >
-
     <section
-        id="about"
-        className={`about ${isNight ? "night-mode" : "day-mode"}`}
+      id="about"
+      className={`about ${isNight ? "night-mode" : "day-mode"}`}
     >
-
-      {/* =========================
-          BACKGROUND DECORATION
-      ========================= */}
-
+      {/* BACKGROUND GLOW */}
       <div className="about-glow about-glow-one"></div>
       <div className="about-glow about-glow-two"></div>
 
-
       <div className="about-container">
-
         {/* =========================
             SECTION HEADING
         ========================= */}
 
         <div className="about-heading">
-
           <p className="section-label">
             <span></span>
             GET TO KNOW ME
@@ -58,274 +53,197 @@ const About = ({ isNight }) => {
           <h2>
             About <span>Me</span>
           </h2>
-
         </div>
-
 
         {/* =========================
             MAIN CONTENT
         ========================= */}
 
         <div className="about-main">
-
-
           {/* =========================
               LEFT - IMAGE
           ========================= */}
 
           <div className="about-visual">
-
-            {/* Decorative rings */}
-
+            {/* Decorative Rings */}
             <div className="about-ring ring-one"></div>
             <div className="about-ring ring-two"></div>
             <div className="about-ring ring-three"></div>
 
-
             {/* Photo */}
-
             <div className="about-photo-frame">
-
-              <img
-                src="/pavani-about.png"
-                alt="Pavani Gudupu"
-              />
-
+              <img src="/pavani-about.png" alt="Pavani Gudupu" />
             </div>
-
 
             {/* Signature */}
+            <div className="about-signature">Pavani</div>
 
-            <div className="about-signature">
-              Pavani
-            </div>
-
-
-            {/* Passion card */}
-
+            {/* Career Interest Card */}
             <div className="passion-card">
-
-              <span>
-                Passionate about
-              </span>
+              <span className="career-label">CAREER INTEREST</span>
 
               <strong>
-                Turning Ideas into
+                Interested in working
                 <br />
-                <b>Digital Reality ✨</b>
+                <b>in the Software Industry</b>
               </strong>
-
             </div>
-
           </div>
 
-
-
           {/* =========================
-              RIGHT - CONTENT
+              RIGHT - INFORMATION
           ========================= */}
 
           <div className="about-info">
-
             <h3>
-              I'm Pavani, a passionate{" "}
-              <span>Software Developer.</span>
+              Hi, I'm Pavani, a <span>Computer Science graduate</span>{" "}
+              interested in software development.
             </h3>
 
-
             <p>
-              I love building modern, responsive and user-friendly
-              web applications. I enjoy transforming ideas into
-              meaningful digital experiences.
+              I have one year of professional experience at Venx IT Solutions,
+              where I worked in application support and gained hands-on
+              experience with SQL Server, SSMS, software troubleshooting,
+              testing and customer support.
             </p>
 
             <p>
-              I'm constantly learning and exploring new technologies
-              to improve my skills and create solutions that make
-              a difference.
+              I'm currently looking for an opportunity in the software industry
+              where I can apply what I've learned, gain hands-on development
+              experience and continue learning new technologies.
             </p>
-
-
 
             {/* =========================
-                DETAILS + QUOTE
+                DETAILS + ACHIEVEMENT
             ========================= */}
 
             <div className="about-details-wrapper">
-
-
               {/* DETAILS */}
 
               <div className="about-details">
-
+                {/* EDUCATION */}
                 <div className="detail-item">
-
                   <div className="detail-icon">
                     <FaGraduationCap />
                   </div>
 
                   <div>
                     <span>Education</span>
-                    <p>
-                      B.Tech in Computer Science & Engineering
-                    </p>
-                  </div>
 
+                    <p>B.Tech — Computer Science & Data Science</p>
+                  </div>
                 </div>
 
-
+                {/* EXPERIENCE */}
                 <div className="detail-item">
-
                   <div className="detail-icon">
                     <FaBriefcase />
                   </div>
 
                   <div>
                     <span>Experience</span>
-                    <p>
-                      Building projects and real-world solutions
-                    </p>
-                  </div>
 
+                    <p>1 Year — Venx IT Solutions</p>
+                  </div>
                 </div>
 
-
+                {/* CAREER FOCUS */}
                 <div className="detail-item">
-
                   <div className="detail-icon">
-                    <FaLocationDot />
+                    <FaBullseye />
                   </div>
 
                   <div>
-                    <span>Location</span>
-                    <p>
-                      Visakhapatnam, India
-                    </p>
+                    <span>Career Goal</span>
+
+                    <p>Gain hands-on experience & learn new technologies</p>
                   </div>
-
                 </div>
-
               </div>
 
+              {/* =========================
+                  ACHIEVEMENT CARD
+              ========================= */}
 
-
-              {/* QUOTE */}
-
-              {/* <div className="about-quote">
-
-                <div className="quote-mark">
-                  “
+              <div className="about-quote achievement-card">
+                <div className="achievement-icon">
+                  <FaMedal />
                 </div>
 
+                <span className="achievement-label">RECOGNITION</span>
+
+                <strong>Star Performer</strong>
+
                 <p>
-                  Code is not just what I write,
+                  Venx IT Solutions
                   <br />
-                  it's how I solve problems and
-                  <br />
-                  <span>create impact.</span>
+                  May 2026
                 </p>
 
-                <div className="quote-line"></div>
-
-              </div> */}
-
+                <div className="achievement-stars">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </div>
+              </div>
             </div>
-
-
           </div>
-
         </div>
 
-
-
         {/* =========================
-            STATS
+            FACTS / ACHIEVEMENTS
         ========================= */}
 
         <div className="about-stats">
-
+          {/* EXPERIENCE */}
           <div className="stat-card">
-
-            <FaCode />
+            <FaBriefcase />
 
             <div>
-              <strong>10+</strong>
-              <span>Projects</span>
+              <strong>1 Year</strong>
+              <span>Professional Experience</span>
             </div>
-
           </div>
 
-
+          {/* STAR PERFORMER */}
           <div className="stat-card">
+            <FaStar />
 
+            <div>
+              <strong>Star Performer</strong>
+              <span>Venx IT Solutions</span>
+            </div>
+          </div>
+
+          {/* AVISHKARA */}
+          <div className="stat-card">
             <FaTrophy />
 
             <div>
-              <strong>2+</strong>
-              <span>Years Learning</span>
+              <strong>2nd Place</strong>
+              <span>Avishkara</span>
             </div>
-
           </div>
 
-
+          {/* CGPA */}
           <div className="stat-card">
-
-            <FaRocket />
+            <FaAward />
 
             <div>
-              <strong>100+</strong>
-              <span>Problems Solved</span>
+              <strong>8.35</strong>
+              <span>B.Tech CGPA</span>
             </div>
-
           </div>
-
-
-          <div className="stat-card">
-
-            <FaHeart />
-
-            <div>
-              <strong>100%</strong>
-              <span>Dedication</span>
-            </div>
-
-          </div>
-
         </div>
 
-
-
-        {/* =========================
-            TECH STACK
-        ========================= */}
-
+        {/* TECHNICAL SKILLS */}
         <div className="tech-stack">
-
-          <div className="tech-title">
-            TECH STACK
-          </div>
-
+          <div className="tech-title">TECHNICAL SKILLS</div>
 
           <div className="tech-list">
-
-            <div className="tech-item">
-              <FaHtml5 />
-              <span>HTML</span>
-            </div>
-
-            <div className="tech-item">
-              <FaCss3Alt />
-              <span>CSS</span>
-            </div>
-
-            <div className="tech-item">
-              <FaJsSquare />
-              <span>JavaScript</span>
-            </div>
-
             <div className="tech-item">
               <FaReact />
-              <span>React</span>
+              <span>React.js</span>
             </div>
 
             <div className="tech-item">
@@ -339,21 +257,54 @@ const About = ({ isNight }) => {
             </div>
 
             <div className="tech-item">
-              <SiMysql />
-              <span>SQL</span>
+              <FaJsSquare />
+              <span>JavaScript</span>
+            </div>
+
+            <div className="tech-item">
+              <FaCode />
+              <span>Python</span>
+            </div>
+
+            <div className="tech-item">
+              <FaCode />
+              <span>REST APIs</span>
+            </div>
+
+            <div className="tech-item">
+              <SiPostgresql />
+              <span>PostgreSQL</span>
+            </div>
+
+            <div className="tech-item">
+              <FaDatabase />
+              <span>SQL Server</span>
+            </div>
+
+            <div className="tech-item">
+              <FaDatabase />
+              <span>SSMS</span>
             </div>
 
             <div className="tech-item">
               <FaGitAlt />
-              <span>Git</span>
+              <span>Git &amp; GitHub</span>
             </div>
 
+            <div className="tech-item">
+              <SiPostman />
+              <span>Postman</span>
+            </div>
+
+            <div className="tech-item">
+              <SiThreedotjs />
+              <span>Three.js</span>
+            </div>
+
+            
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 };

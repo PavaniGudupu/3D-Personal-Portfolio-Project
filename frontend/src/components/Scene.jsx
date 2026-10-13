@@ -1,75 +1,3 @@
-// import { Suspense } from "react";
-// import { Canvas, useThree } from "@react-three/fiber";
-// import {
-//   PerspectiveCamera,
-//   Center,
-// } from "@react-three/drei";
-
-// import FloatingIsland from "./FloatingIsland";
-
-
-// const ResponsiveIsland = () => {
-
-//   const { viewport } = useThree();
-
-//   // Change this number if we need to make
-//   // the island slightly bigger or smaller.
-//   const scale = Math.min(
-//     viewport.width * 0.06,
-//     viewport.height * 0.06
-//   );
-
-//   return (
-//     <Center>
-//       <FloatingIsland
-//         scale={scale}
-//       />
-//     </Center>
-//   );
-// };
-
-
-// const Scene = () => {
-
-//   return (
-
-//     <Canvas
-//       gl={{
-//         alpha: true,
-//         antialias: true,
-//       }}
-//       style={{
-//         width: "100%",
-//         height: "100%",
-//       }}
-//     >
-
-//       <PerspectiveCamera
-//         makeDefault
-//         position={[0, 0, 10]}
-//         fov={45}
-//       />
-
-//       <ambientLight intensity={2} />
-
-//       <directionalLight
-//         position={[10, 10, 10]}
-//         intensity={3}
-//       />
-
-//       <Suspense fallback={null}>
-
-//         <ResponsiveIsland />
-
-//       </Suspense>
-
-//     </Canvas>
-
-//   );
-// };
-
-
-// export default Scene;
 
 
 import { Suspense, useRef, useEffect } from "react";
@@ -80,15 +8,15 @@ import {
 } from "@react-three/drei";
 
 import FloatingIsland from "./FloatingIsland";
+import ModelLoader from "./ModelLoader";
 
 
 const ResponsiveIsland = () => {
 
   const { viewport } = useThree();
 
-  // 🔒 LOCKED RESPONSIVE SCALE
   const scale = Math.min(
-    viewport.width * 0.055,  // 3D image - size
+    viewport.width * 0.055,
     viewport.height * 0.055
   );
 
@@ -97,9 +25,11 @@ const ResponsiveIsland = () => {
   const mouseX = useRef(0);
   const mouseY = useRef(0);
 
+  const scrollProgress = useRef(0);
+
 
   /* =========================
-     GLOBAL MOUSE MOVEMENT
+     MOUSE MOVEMENT
   ========================= */
 
   useEffect(() => {
@@ -115,9 +45,30 @@ const ResponsiveIsland = () => {
     };
 
 
+    /* =========================
+       HERO SCROLL PROGRESS
+    ========================= */
+
+    const handleScroll = () => {
+
+      const progress =
+        window.scrollY / window.innerHeight;
+
+      scrollProgress.current =
+        Math.min(Math.max(progress, 0), 1);
+
+    };
+
+
     window.addEventListener(
       "mousemove",
       handleMouseMove
+    );
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      { passive: true }
     );
 
 
@@ -128,55 +79,93 @@ const ResponsiveIsland = () => {
         handleMouseMove
       );
 
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
     };
 
   }, []);
 
 
   /* =========================
-     ANIMATION
+     3D ANIMATION
   ========================= */
 
-useFrame((state) => {
+  useFrame((state) => {
 
-  if (!islandRef.current) return;
-
-  // 🌊 Faster but controlled floating
-  const floating =
-    Math.sin(state.clock.elapsedTime * 1.8) * 0.12;
-
-  // 🖱️ Stronger mouse movement
-  const targetX =
-    mouseX.current * 0.28;
-
-  const targetY =
-    floating - mouseY.current * 0.18;
+    if (!islandRef.current) return;
 
 
-  // Smooth horizontal movement
-  islandRef.current.position.x +=
-    (targetX - islandRef.current.position.x) * 0.06;
+    /* FLOAT */
+
+    const floating =
+      Math.sin(
+        state.clock.elapsedTime * 1.8
+      ) * 0.12;
 
 
-  // Smooth vertical movement
-  islandRef.current.position.y +=
-    (targetY - islandRef.current.position.y) * 0.06;
+    /* MOUSE */
 
-});
+    const targetX =
+      mouseX.current * 0.28;
+
+    const mouseTargetY =
+      -mouseY.current * 0.18;
+
+
+    /* SCROLL DEPTH */
+
+    const scroll =
+      scrollProgress.current;
+
+    const targetY =
+      floating +
+      mouseTargetY +
+      scroll * 0.65;
+
+    const targetZ =
+      -scroll * 1.2;
+
+
+    /* SMOOTH X */
+
+    islandRef.current.position.x +=
+      (
+        targetX -
+        islandRef.current.position.x
+      ) * 0.06;
+
+
+    /* SMOOTH Y */
+
+    islandRef.current.position.y +=
+      (
+        targetY -
+        islandRef.current.position.y
+      ) * 0.06;
+
+
+    /* SMOOTH Z */
+
+    islandRef.current.position.z +=
+      (
+        targetZ -
+        islandRef.current.position.z
+      ) * 0.05;
+
+  });
 
 
   return (
 
     <Center>
 
-{/*   ################  3D image - rotation
-  <group
-    ref={islandRef}
-    rotation={[0, -0.4, 0]}
-  > 
-*/}
-
-      <group ref={islandRef} rotation={[0.38, -1.95, 0]}> 
+      <group
+        ref={islandRef}
+        rotation={[0.38, -1.95, 0]}
+      >
 
         <FloatingIsland
           scale={scale}
@@ -185,14 +174,13 @@ useFrame((state) => {
       </group>
 
     </Center>
+
   );
 };
 
 
-const Scene = () => {
-
+const Scene = ({ isNight }) => {
   return (
-
     <Canvas
       gl={{
         alpha: true,
@@ -203,30 +191,77 @@ const Scene = () => {
         height: "100%",
       }}
     >
-
       <PerspectiveCamera
         makeDefault
         position={[0, 0, 10]}
         fov={45}
       />
 
-      <ambientLight intensity={2} />
+      {/* =========================
+          DAY LIGHTING
+      ========================= */}
 
-      <directionalLight
-        position={[10, 10, 10]}
-        intensity={3}
-      />
+      {!isNight && (
+        <>
+          <ambientLight
+            intensity={2}
+            color="#ffffff"
+          />
 
-      <Suspense fallback={null}>
+          <directionalLight
+            position={[10, 10, 10]}
+            intensity={3}
+            color="#ffffff"
+          />
+        </>
+      )}
 
+
+{/* =========================
+    NIGHT LIGHTING #71849d
+========================= */}
+
+{isNight && (
+  <>
+    {/* Soft overall night illumination */}
+    <ambientLight
+      intensity={1.15}
+      color="#65717f"
+    />
+
+    {/* Main moonlight */}
+    <directionalLight
+      position={[-10, 12, 8]}
+      intensity={1.8}
+      color="#71849d"
+    />
+
+    {/* Neutral front fill - keeps details visible */}
+    <directionalLight
+      position={[3, 2, 10]}
+      intensity={0.8}
+      color="#d8e1eb"
+    />
+
+    {/* Blue rim/highlight */}
+    <pointLight
+      position={[5, 5, 3]}
+      intensity={0.55}
+      color="#91b5e4"
+      distance={20}
+    />
+  </>
+)}
+
+
+
+
+      <Suspense fallback={<ModelLoader />}>
         <ResponsiveIsland />
-
       </Suspense>
 
     </Canvas>
-
   );
 };
-
 
 export default Scene;

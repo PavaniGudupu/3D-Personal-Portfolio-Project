@@ -45,7 +45,41 @@ Insect Bazaar DAEcrib
 Bugs:
 1. 3D object, loading was so delay. Loading option
 2. Mouse cursor, at bottom of hero section 
-3. Remove side scroller
+
 4. Night view, 3D object change
-5. Background image of About section - fixed and responsive even after zoom in and out. same as hero
-6. 
+6. is it good ui espacially zoom
+
+
+In mobile view, navbar text is not visible. Also Hover
+
+Things I would still change
+There aren't many. I would now stop redesigning sections and move into refinement.
+1. Hero responsiveness — this is the biggest thing we need to test. The desktop composition is excellent, but we need to see what happens around 1440, 1024, 768, 430, 390 and 360 px.
+2. 3D performance — lazy-load the model, optimize the GLB/textures, cap DPR, provide sensible mobile behavior and make sure it doesn't destroy Lighthouse performance.
+3. Animations — right now the screenshot looks polished, but screenshots can't communicate interaction. This should be our next visual-development stage. Add subtle scroll reveal animations rather than making everything fly around.
+4. Project cards — eventually use actual project screenshots/previews. That will make this section much stronger than adding decorative 3D models.
+5. Contact form — make it actually send messages, with loading/success/error states and validation.
+6. CV download — verify that the PDF really downloads in production.
+7. Accessibility/SEO — semantic structure, keyboard interaction, reduced-motion handling, meta information, Open Graph image, favicon, descriptive alt text, etc.
+8. Deployment and final testing.
+
+
+
+Phase 1 — Animation system
+We'll define one consistent animation language for the entire site:
+- Navbar → soft entrance
+- Hero text → staggered reveal
+- Island → 3D entrance + idle floating
+- Scroll mouse → existing looping movement
+- About photo → reveal
+- About rings → extremely slow rotation
+- About information → staggered reveal
+- Stats → rise/fade when entering viewport
+- Tech stack → sequential reveal
+- Project cards → stagger upward
+- technology decorations → subtle parallax/float
+- Contact → gentle reveal
+- Footer → minimal reveal
+- all hover effects → consistent
+- respect prefers-reduced-motion
+
