@@ -86,12 +86,13 @@ useEffect(() => {
         </h1>
 
         <h2>
-          Software Developer
+          Aspiring Software Developer
         </h2>
 
         <p className="hero-description">
-          I build modern web applications and enjoy creating
-          simple, useful and beautiful digital experiences.
+          Computer Science graduate with hands-on project
+          experience in web development, databases, and
+          application support.
         </p>
 
 

@@ -1196,3 +1196,64 @@
   color: #f5b82e;
   font-size: 12px;
 }
+
+
+
+/* TECHNICAL SKILLS - TWO ROWS */
+
+.tech-stack {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.tech-title {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 95px;
+  padding: 16px 8px;
+  border: 1px solid rgba(120, 160, 210, 0.25);
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.25s ease,
+              border-color 0.25s ease,
+              background 0.25s ease;
+}
+
+.tech-item svg {
+  width: 26px;
+  height: 26px;
+  color: var(--accent-color, #4f8cff);
+}
+
+.tech-item span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color, #4f8cff);
+  background: rgba(79, 140, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+  .tech-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
