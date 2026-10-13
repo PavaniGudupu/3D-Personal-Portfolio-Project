@@ -21,6 +21,11 @@ const Contact = ({ isNight }) => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const handleChange = (event) => {
 
@@ -34,13 +39,60 @@ const Contact = ({ isNight }) => {
   };
 
 
-  const handleSubmit = (event) => {
 
-    event.preventDefault();
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    console.log(formData);
+  if (isSubmitting) return;
 
-  };
+  setIsSubmitting(true);
+  setSubmitStatus({ type: "", message: "" });
+
+  try {
+    const response = await fetch("https://formspree.io/f/xppqylzz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      const errorMessage = result.errors
+        ?.map((error) => error.message)
+        .join(" ");
+
+      throw new Error(
+        errorMessage || "Unable to send your message. Please try again."
+      );
+    }
+
+    setSubmitStatus({
+      type: "success",
+      message: "Your message has been sent successfully!",
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  } catch (error) {
+    setSubmitStatus({
+      type: "error",
+      message:
+        error.message ||
+        "Something went wrong. Please check your connection and try again.",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
 
   return (
@@ -292,16 +344,26 @@ const Contact = ({ isNight }) => {
               </div>
 
 
-              <button
-                type="submit"
-                className="contact-submit"
-              >
 
-                <FaPaperPlane />
+{submitStatus.message && (
+  <p
+    className={`contact-form-status ${submitStatus.type}`}
+    role={submitStatus.type === "error" ? "alert" : "status"}
+    aria-live="polite"
+  >
+    {submitStatus.message}
+  </p>
+)}
 
-                Send Message
+<button
+  type="submit"
+  className="contact-submit"
+  disabled={isSubmitting}
+>
+  <FaPaperPlane />
+  {isSubmitting ? "Sending..." : "Send Message"}
+</button>
 
-              </button>
 
 
             </form>
